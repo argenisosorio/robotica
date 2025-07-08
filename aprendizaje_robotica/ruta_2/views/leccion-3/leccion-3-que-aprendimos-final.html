@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Curso - Aprendizaje en Robótica">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <link rel="icon" href="../../static/img/favicon.png">
+    <title>Curso - Aprendizaje en Robótica</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font-awesome-6 -->
+    <link href="../../static/font-awesome-6/css/fontawesome.css" rel="stylesheet" />
+    <link href="../../static/font-awesome-6/css/all.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="../../static/css/theme.css" rel="stylesheet">
+    <style>
+      .list-group-item {
+        background-color: #fff !important;
+        border-color: #fff !important;
+      }
+      .list-group-item.active {
+        z-index: 2;
+        color: #fff;
+        background-color: #9ac31c !important;
+        border-color: #0d6efd;
+      }
+      .btn-success {
+        width: 100%;
+        background: #fff;
+        color: #9ac31c;
+        border-color: #9ac31c;
+      }
+      .btn-success.active {
+        color: #fff;
+        background-color: #9ac31c !important;
+        border-color: #9ac31c;
+      }
+      .btn-success:hover {
+        background: #9ac31c;
+        border-color: #fff;
+      }
+      /* Estilos generales para todos los tamaños de pantalla */
+      #my-img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Dispositivos pequeños (teléfonos) */
+      @media (max-width: 576px) {
+        .col-3 {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        .col-9 {
+          width: 100%;
+        }
+
+        .btn-success img {
+          width: 15%;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+      }
+
+      /* Dispositivos medianos (tabletas) */
+      @media (min-width: 577px) and (max-width: 768px) {
+        .col-3 {
+          width: 40%;
+        }
+
+        .col-9 {
+          width: 60%;
+        }
+
+        .btn-success img {
+          width: 12%;
+        }
+
+        h1 {
+          font-size: 40px;
+        }
+      }
+
+      /* Dispositivos grandes (computadoras de escritorio) */
+      @media (min-width: 769px) {
+        .col-3 {
+          width: 25%;
+        }
+
+        .col-9 {
+          width: 75%;
+        }
+
+        .btn-success img {
+          width: 9%;
+        }
+
+        .btn-success {
+          padding: 10px;
+        }
+
+        .btn-danger {
+          padding: 10px;
+        }
+
+        h1 {
+          font-size: 50px;
+        }
+      }
+      #reset-button {
+        background-color: #e63946;
+        color: #fff;
+        border-color: #e63946;
+      }
+
+      #reset-button:hover {
+        background-color: #c9303d;
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+<body>
+  <!-- Barra de progreso -->
+  <div id="progressBarVerde"></div>
+
+  <!-- Banner -->
+  <div class="container-fluidd">
+    <a href="../../index.html">
+      <img
+        id="my-img"
+        src="../../static/img/banner.png"
+        onmouseover="hover(this);"
+        onmouseout="unhover(this);"
+        width="100%"
+      />
+    </a>
+  </div>
+  <!-- Final del Banner -->
+
+  <!-- Breadcrumb -->
+  <div class="container-fluid">
+    <p>
+      <nav aria-label="breadcrumb" style="color: #9ac31c;font-size: 17px;">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="../../index.html">
+              <i class="fa-solid fa-house"></i> Inicio
+            </a>
+          </li>
+          <li class="breadcrumb-item"><a href="leccion-3.html">Aprende</a></li>
+          <li class="breadcrumb-item active" aria-current="page">¿Qué aprendimos?</li>
+        </ol>
+      </nav>
+    </p>
+  </div>
+  <!-- Final Breadcrumb -->
+
+  <h1
+    class="text-center mb-3"
+    style="font-size: 50px;"
+  >
+    <img src="../../static/img/icono_robot_verde.png" width="50px" class="mb-2">
+    ¿Qué aprendimos?
+  </h1>
+
+  <div class="container-fluid">
+    <div
+      class="row mb-3"
+      style="padding-right: 15px; padding-left: 10px;"
+    >
+      <!-- Left Column -->
+      <div class="col-3">
+        <a href="leccion-3.html">
+          <button type="button" class="btn btn-success text-start">
+            <b style="font-size: 25px;">Continuemos</b>
+          </button>
+        </a>
+        <a href="leccion-3-programacion.html">
+          <button type="button" class="btn btn-success text-start">
+            -----
+            <b>Programación</b>
+          </button>
+        </a>
+        <a href="leccion-3-como-funciona-la-programacion.html">
+          <button type="button" class="btn btn-success text-start">
+            -----
+            <b>¿Cómo funciona la programación?</b>
+          </button>
+        </a>
+        <a href="leccion-3-scratch.html">
+          <button type="button" class="btn btn-success text-start">
+            -----
+            <b>Scratch</b>
+          </button>
+        </a>
+        <br>
+        <br>
+        <a href="leccion-3-que-aprendimos-final.html">
+          <button type="button" class="btn btn-success text-start active">
+            <b style="font-size: 25px;">¿Qué aprendimos?</b>
+          </button>
+        </a>
+      </div>
+      <!-- End Left Column -->
+
+      <!-- Right Column -->
+      <div
+        class="col-9"
+        style="
+          border: ridge 1px #9ac31c;
+          border-radius: 5px;
+        "
+      >
+        <h3 style="padding: 15px; margin-top: 10px;">
+          A continuación te presentamos varias preguntas, en cada una debes seleccionar una sola opción:
+        </h3>
+
+        <hr>
+
+        <!-- Pregunta 1 -->
+        <div class="row">
+          <div class="col-8" style="border: ridge 1px transparent;">
+            <div style="padding: 20px; border: ridge 1px transparent;">
+              <p style="font-size: 30px;">1. Programar es:</p>
+              <div class="mb-3" style="font-size: 20px;">
+                <label>
+                  <input type="radio" name="pregunta_1" value="false" required> Mirar la televisión.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_1" value="true"> Dar instrucciones detalladas a la computadora, paso a paso en un lenguaje que ella entiende.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_1" value="false"> Jugar con tus amigos.
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-4" style="border: ridge 1px transparent;">
+            <div>
+              <div class="mt-4">
+                <img src="../../static/img/nina-cara.jpg" width="150px" class="mb-2">
+              </div>
+              <audio controls>
+                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!-- Final Pregunta 1 -->
+
+        <hr>
+
+        <!-- Pregunta 2 -->
+        <div class="row">
+          <div class="col-8" style="border: ridge 1px transparent;">
+            <div style="padding: 20px; border: ridge 1px transparent;">
+              <p style="font-size: 30px;">2. Un algoritmo es:</p>
+              <div class="mb-3" style="font-size: 20px;">
+                <label>
+                  <input type="radio" name="pregunta_2" value="false"> Un tipo de robot.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_2" value="false"> Un juego de computadora.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_2" value="true"> Una serie de pasos ordenados para hacer algo.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_2" value="false"> Un dibujo divertido.
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-4" style="border: ridge 1px transparent;">
+            <div>
+              <div class="mt-4">
+                <img src="../../static/img/nino-cara.jpg" width="150px" class="mb-2">
+              </div>
+              <audio controls>
+                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!-- Final Pregunta 2 -->
+
+        <hr>
+
+        <!-- Pregunta 3 -->
+        <div class="row">
+          <div class="col-8" style="border: ridge 1px transparent;">
+            <div style="padding: 20px; border: ridge 1px transparent;">
+              <p style="font-size: 30px;">3. Si quieres cepillarte los dientes, el primer paso de tu algoritmo es:</p>
+              <div class="mb-3" style="font-size: 20px;">
+                <label>
+                  <input type="radio" name="pregunta_3" value="false"> Enjuagarse con agua.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_3" value="false"> Mirar televisión.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_3" value="false"> Comer un dulce.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_3" value="true"> Poner crema en el cepillo.
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-4" style="border: ridge 1px transparent;">
+            <div>
+              <div class="mt-4">
+                <img src="../../static/img/nina-cara.jpg" width="150px" class="mb-2">
+              </div>
+              <audio controls>
+                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!-- Final Pregunta 3 -->
+
+        <hr>
+
+        <!-- Pregunta 4 -->
+        <div class="row">
+          <div class="col-8" style="border: ridge 1px transparent;">
+            <div style="padding: 20px; border: ridge 1px transparent;">
+              <p style="font-size: 30px;">4. Si estás cocinando siguiendo una receta, entonces estás siguiendo un:</p>
+              <div class="mb-3" style="font-size: 20px;">
+                <label>
+                  <input type="radio" name="pregunta_4" value="true"> Un algoritmo.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_4" value="false"> Un videojuego.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_4" value="false"> Un personaje.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_4" value="false"> Un robot.
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-4" style="border: ridge 1px transparent;">
+            <div>
+              <div class="mt-4">
+                <img src="../../static/img/nino-cara.jpg" width="150px" class="mb-2">
+              </div>
+              <audio controls>
+                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!-- Final Pregunta 4 -->
+
+        <hr>
+
+        <!-- Pregunta 5 -->
+        <div class="row">
+          <div class="col-8" style="border: ridge 1px transparent;">
+            <div style="padding: 20px; border: ridge 1px transparent;">
+              <p style="font-size: 30px;">5. Los colores de los bloques de Scratch indican:</p>
+              <div class="mb-3" style="font-size: 20px;">
+                <label>
+                  <input type="radio" name="pregunta_5" value="false"> Qué tan rápido se mueven los personajes.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_5" value="true"> Qué hace cada bloque.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_5" value="false"> Cuántos personajes hay en la pantalla.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_5" value="false"> Si el juego es divertido.
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-4" style="border: ridge 1px transparent;">
+            <div>
+              <div class="mt-4">
+                <img src="../../static/img/nina-cara.jpg" width="150px" class="mb-2">
+              </div>
+              <audio controls>
+                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!-- Final Pregunta 5 -->
+
+        <hr>
+
+        <!-- Pregunta 6 -->
+        <div class="row">
+          <div class="col-8" style="border: ridge 1px transparent;">
+            <div style="padding: 20px; border: ridge 1px transparent;">
+              <p style="font-size: 30px;">6. Scratch tiene bloques de colores que se unen como piezas de un rompecabezas para:</p>
+              <div class="mb-3" style="font-size: 20px;">
+                <label>
+                  <input type="radio" name="pregunta_6" value="true"> Dar instrucciones a la computadora y crear cosas.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_6" value="false"> Hacer una torre muy alta.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_6" value="false"> Guardar tus juguetes.
+                </label>
+                <br>
+                <label>
+                  <input type="radio" name="pregunta_6" value="false"> Contar hasta diez.
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-4" style="border: ridge 1px transparent;">
+            <div>
+              <div class="mt-4">
+                <img src="../../static/img/nino-cara.jpg" width="150px" class="mb-2">
+              </div>
+              <audio controls>
+                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!-- Final Pregunta 6 -->
+
+        <hr>
+
+        <!-- Botones del formulario -->
+        <div class="text-center mb-3">
+          <button
+            type="button"
+            class="btn btn-success active"
+            onclick="checkAnswers()"
+            style="width: 15%;"
+          >
+            Verificar
+          </button>
+          <button
+            id="reset-button"
+            type="button"
+            class="btn btn-success"
+            onclick="resetRadios();"
+            style="width: 15%;"
+          >
+            <b>Reiniciar</b>
+          </button>
+        </div>
+        <!-- Final de Botones del formulario -->
+
+        <!-- Siguiente módulo -->
+        <div id="next-section" style="display: none;">
+          <br>
+          <div class="text-center mt-5 mb-5">
+            <a href="../leccion-4/leccion-4.html">
+              <img
+                src="../../static/img/Leccion-3/nina-next-4.png"
+                class="llave-inglesa"
+              >
+            </a>
+          </div>
+        </div>
+        <!-- Final de Siguiente módulo -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body d-flex flex-column align-items-center">
+                <img
+                  id="modalImage"
+                  src=""
+                  alt=""
+                  style="width: 50%; display: none;"
+                >
+                <hr>
+                <h2 class="text-center" id="modalText"></h2>
+                <span id="helpText"></span>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Final de Modal -->
+      </div>
+      <!-- End Right Column -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container-fluid" style="background: #9ac31c; padding: 5px;">
+    <div class="text-center img-zoom mb-3 mt-4">
+      <a href="http://www.cenditel.gob.ve/" target="_blank">
+        <img src="../../static/img/logo-cenditel.png" width="7%" class="mb-3">
+        <br>
+        <b id="typewriter" style="font-size: 15px; color: #fff"></b>
+      </a>
+    </div>
+  </div>
+  <!-- Final del Footer -->
+
+  <script src="../../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function unhover(element) {
+      element.setAttribute('src', '../../static/img/banner.png');
+    }
+    function hover(element) {
+      element.setAttribute('src', '../../static/img/banner2.png');
+    }
+  </script>
+
+  <script>
+    const text = "Desarrollado por CENDITEL";
+    const typewriterElement = document.getElementById("typewriter");
+    let index = 0;
+    let deleting = false;
+
+    function typeEffect() {
+      // Mostrar o borrar caracteres
+      typewriterElement.textContent = text.substring(0, index);
+
+      if (!deleting) {
+        if (index < text.length) {
+          index++;
+        } else {
+          deleting = true;
+          setTimeout(typeEffect, 1000); // Pausa antes de borrar
+          return;
+        }
+      } else {
+        if (index > 0) {
+          index--;
+        } else {
+          deleting = false;
+        }
+      }
+
+      // Cambiar la velocidad dependiendo de si escribe o borra
+      const speed = deleting ? 50 : 100;
+      setTimeout(typeEffect, speed);
+    }
+
+    // Iniciar el efecto
+    typeEffect();
+  </script>
+
+  <script>
+    // Selecciona la barra de progreso
+    const progressBarVerde = document.getElementById('progressBarVerde');
+
+    // Escuchar el evento de scroll
+    window.addEventListener('scroll', () => {
+    // Altura total del documento
+    const scrollHeight = document.documentElement.scrollHeight;
+
+    // Altura visible de la ventana
+    const clientHeight = document.documentElement.clientHeight;
+
+    // Distancia desplazada desde la parte superior
+    const scrollTop = document.documentElement.scrollTop;
+
+    // Calcular el porcentaje de progreso
+    const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+
+    // Actualizar el ancho de la barra
+    progressBarVerde.style.width = `${scrollPercentage}%`;
+    });
+  </script>
+
+  <script>
+    function checkAnswers() {
+      // Obtener las respuestas seleccionadas
+      const pregunta_1 = document.querySelector('input[name="pregunta_1"]:checked');
+      const pregunta_2 = document.querySelector('input[name="pregunta_2"]:checked');
+      const pregunta_3 = document.querySelector('input[name="pregunta_3"]:checked');
+      const pregunta_4 = document.querySelector('input[name="pregunta_4"]:checked');
+      const pregunta_5 = document.querySelector('input[name="pregunta_5"]:checked');
+      const pregunta_6 = document.querySelector('input[name="pregunta_6"]:checked');
+
+      // Verificar que todas las preguntas tengan respuesta
+      if (
+        !pregunta_1 || !pregunta_2 ||
+        !pregunta_3 || !pregunta_4 ||
+        !pregunta_5 || !pregunta_6
+      ) {
+        openModal(
+          "../../static/img/favicon.png",
+          'Por favor responde todas las preguntas',
+          '',
+          'block'
+        );
+        // Ocultar la sección siguiente.
+        document.getElementById('next-section').style.display = 'none';
+        return;
+      }
+
+      // Convertir valores a booleanos
+      const respuesta1 = pregunta_1.value === "true";
+      const respuesta2 = pregunta_2.value === "true";
+      const respuesta3 = pregunta_3.value === "true";
+      const respuesta4 = pregunta_4.value === "true";
+      const respuesta5 = pregunta_5.value === "true";
+      const respuesta6 = pregunta_6.value === "true";
+
+      // Respuestas correctas
+      const correcto1 = true;
+      const correcto2 = true;
+      const correcto3 = true;
+      const correcto4 = true;
+      const correcto5 = true;
+      const correcto6 = true;
+
+      // Verificar respuestas
+      if (
+        respuesta1 === correcto1 &&
+        respuesta2 === correcto2 &&
+        respuesta3 === correcto3 &&
+        respuesta4 === correcto4 &&
+        respuesta5 === correcto5 &&
+        respuesta6 === correcto6
+      ){
+        openModal(
+          "../../static/img/acierto.png",
+          '✅ ¡Perfecto! todas las respuestas son correctas',
+          '',
+          'block'
+        );
+        // Mostrar la sección siguiente
+        document.getElementById('next-section').style.display = 'block';
+      } else {
+        let mensaje = '';
+
+        if (respuesta1 !== correcto1) {
+          mensaje += '💡 Pista 1: Recuerda que programar es decirle a la computadora exactamente qué hacer, paso a paso.<br><br>';
+        }
+        if (respuesta2 !== correcto2) {
+          mensaje += '💡 Pista 2: Un algoritmo es como una receta que seguimos para lograr algo, ¿cuál opción se parece más a eso?<br><br>';
+        }
+        if (respuesta3 !== correcto3) {
+          mensaje += '💡 Pista 3: Piensa en el primer paso que haces antes de cepillarte los dientes, ¿qué necesitas poner en el cepillo?<br><br>';
+        }
+        if (respuesta4 !== correcto4) {
+          mensaje += '💡 Pista 4: Cuando sigues una receta, ¿qué tipo de instrucciones estás siguiendo?<br><br>';
+        }
+        if (respuesta5 !== correcto5) {
+          mensaje += '💡 Pista 5: Observa los bloques de Scratch, ¿qué indica el color de cada uno sobre su función?<br><br>';
+        }
+        if (respuesta6 !== correcto6) {
+          mensaje += '💡 Pista 6: Los bloques de colores en Scratch se usan para crear instrucciones, ¿qué puedes lograr al unirlos?<br><br>';
+        }
+
+        openModal(
+          "../../static/img/favicon.png",
+          '❌ Algunas respuestas son incorrectas:',
+          mensaje,
+          'block'
+        );
+      }
+    }
+
+    /* Desmarca todos los radios del formulario */
+    function resetRadios() {
+      document.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.checked = false;
+      });
+      document.getElementById('next-section').style.display = 'none';
+    }
+
+    /* Función para abrir el modal */
+    function openModal(image,text,helpText,display){
+      // Imagen para el modal si no se responde alguna pregunta.
+      imgSrc = image;
+
+      // Mostrar el modal con la imagen.
+      const modalImageElement = document.getElementById('modalImage');
+
+      // Cambiar la imagen del modal
+      modalImageElement.src = imgSrc;
+
+      document.getElementById('modalText').textContent = text;
+      document.getElementById('helpText').innerHTML = helpText;
+      document.getElementById('modalImage').style.display = display;
+
+      var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+      myModal.show();
+      return;
+    }
+  </script>
+</body>
+</html>
