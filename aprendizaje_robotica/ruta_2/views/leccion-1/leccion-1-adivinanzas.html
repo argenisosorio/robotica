@@ -255,6 +255,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Incorrecto!"
+                    onclick="responseCounter1(0)"
                   >
                     <b>El Perro</b>
                 </button>
@@ -273,6 +274,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Incorrecto!"
+                    onclick="responseCounter1(0)"
                   >
                   <b>El Suéter</b>
                 </button>
@@ -291,6 +293,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Acertaste!"
+                    onclick="responseCounter1(1)"
                   >
                     <b>El Nombre</b>
                 </button>
@@ -359,6 +362,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Incorrecto!"
+                    onclick="responseCounter2(0)"
                   >
                   <b>El Sol</b>
                 </button>
@@ -377,6 +381,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Acertaste!"
+                    onclick="responseCounter2(1)"
                   >
                   <b>La Sombra</b>
                 </button>
@@ -395,6 +400,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Incorrecto!"
+                    onclick="responseCounter2(0)"
                   >
                     
                     <b>El Perro</b>
@@ -464,6 +470,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Incorrecto!"
+                    onclick="responseCounter3(0)"
                   >
                     <b>Tijera</b>
                 </button>
@@ -482,6 +489,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Acertaste!"
+                    onclick="responseCounter3(1)"
                   >
                   <b>Lápiz</b>
                 </button>
@@ -500,6 +508,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Incorrecto!"
+                    onclick="responseCounter3(0)"
                   >
                     <b>Borrador</b>
                 </button>
@@ -535,7 +544,10 @@
           <br>
 
           <!-- Botones de cambio de lección -->
-          <div class="text-center" style="border: ridge 1px transparent;">
+          <div
+            class="text-center"
+            style="border: ridge 1px transparent; margin-bottom: 5px;"
+          >
             <a href="leccion-1.html">
               <img
                 src="../../static/img/flechas/izq-azul.png"
@@ -546,10 +558,11 @@
             </a>
             <a href="leccion-1-que-aprendimos.html">
               <img
+                id="flecha_derecha"
                 src="../../static/img/flechas/der-azul.png"
                 width="40px"
                 class="llave-inglesa img-rotate-180"
-                style="margin-left: 25px;"
+                style="margin-left: 25px; display: none;"
               >
             </a>
           </div>
@@ -691,6 +704,78 @@
       // Actualizar el ancho de la barra
       progressBar.style.width = `${scrollPercentage}%`;
     });
+  </script>
+
+  <script>
+    countArray1 = []
+
+    /**
+     * Rellena el valor del arreglo si se acierta la adivinanza 1.
+     */
+    function responseCounter1(value) {
+      if (value === 1) {
+        countArray1.push(value);
+        show();
+      } else {
+        countArray1.pop();
+        show();
+      }
+    }
+
+    countArray2 = []
+
+    /**
+     * Rellena el valor del arreglo si se acierta la adivinanza 2.
+     */
+    function responseCounter2(value) {
+      if (value === 1) {
+        countArray2.push(value);
+        show();
+      } else {
+        countArray2.pop();
+        show();
+      }
+    }
+
+    countArray3 = []
+
+    /**
+     * Rellena el valor del arreglo si se acierta la adivinanza 3.
+     */
+    function responseCounter3(value) {
+      if (value === 1) {
+        countArray3.push(value);
+        show();
+      } else {
+        countArray3.pop();
+        show();
+      }
+    }
+
+    /**
+     * Muestra u oculta la flecha de avance a la siguiente lección.
+     *
+     * La función verifica si ambos arreglos de conteo (countArray1, countArray2
+     * y countArray3) tienen más de un elemento. Si es así, muestra la flecha
+     * de la derecha  (permitiendo avanzar a la siguiente lección). Si no, la
+     * oculta.
+     *
+     * Esto sirve para asegurarse de que el usuario haya respondido correctamente
+     * las adivinanzas antes de poder continuar.
+     */
+    function show() {
+      if (
+        countArray1.length >= 1 &&
+        countArray2.length >= 1 &&
+        countArray3.length >= 1
+      ) {
+        // Mostrar la felcha derecha.
+        document.getElementById('flecha_derecha').style.display = 'inline';
+      } else {
+        // Ocultar la flecha derecha.
+        document.getElementById('flecha_derecha').style.display = 'none';
+      }
+    }
   </script>
 </body>
 </html>
