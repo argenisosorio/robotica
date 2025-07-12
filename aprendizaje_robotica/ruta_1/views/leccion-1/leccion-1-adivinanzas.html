@@ -254,6 +254,7 @@
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                   data-text="¡Incorrecto!"
+                  onclick="responseCounter1(0)"
                 >
                   <b>Una Estrella</b>
                 </button>
@@ -272,6 +273,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Incorrecto!"
+                    onclick="responseCounter1(0)"
                   >
                   <b>El Sol</b>
                 </button>
@@ -290,6 +292,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Acertaste!"
+                    onclick="responseCounter1(1)"
                   >
                     <b>Un Arcoíris</b>
                 </button>
@@ -358,6 +361,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Incorrecto!"
+                    onclick="responseCounter2(0)"
                   >
                     <b>Los Soldados</b>
                   </button>
@@ -376,6 +380,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Acertaste!"
+                    onclick="responseCounter2(1)"
                   >
                     <b>Las Hormigas</b>
                   </button>
@@ -394,6 +399,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     data-text="¡Incorrecto!"
+                    onclick="responseCounter2(0)"
                   >
                     <b>Los Trenes</b>
                   </button>
@@ -416,10 +422,11 @@
               </a>
               <a href="leccion-1-que-aprendimos.html">
                 <img
+                  id="flecha_derecha"
                   src="../../static/img/flechas/der-azul.png"
                   width="40px"
                   class="llave-inglesa img-rotate-180"
-                  style="margin-left: 25px;"
+                  style="margin-left: 25px; display: none;"
                 >
               </a>
             </div>
@@ -587,6 +594,58 @@
     // Actualizar el ancho de la barra
     progressBar.style.width = `${scrollPercentage}%`;
     });
+  </script>
+
+  <script>
+    countArray1 = []
+
+    /**
+     * Rellena el valor del arreglo si se acierta la adivinanza 1.
+     */
+    function responseCounter1(value) {
+      if (value === 1) {
+        countArray1.push(value);
+        show();
+      } else {
+        countArray1.pop();
+        show();
+      }
+    }
+
+    countArray2 = []
+
+    /**
+     * Rellena el valor del arreglo si se acierta la adivinanza 2.
+     */
+    function responseCounter2(value) {
+      if (value === 1) {
+        countArray2.push(value);
+        show();
+      } else {
+        countArray2.pop();
+        show();
+      }
+    }
+
+    /**
+     * Muestra u oculta la flecha de avance a la siguiente lección.
+     *
+     * La función verifica si ambos arreglos de conteo (countArray1 y countArray2)
+     * tienen más de un elemento. Si es así, muestra la flecha de la derecha
+     * (permitiendo avanzar a la siguiente lección). Si no, la oculta.
+     *
+     * Esto sirve para asegurarse de que el usuario haya respondido correctamente
+     * ambas adivinanzas antes de poder continuar.
+     */
+    function show() {
+      if (countArray1.length >= 1 && countArray2.length >= 1) {
+        // Mostrar la felcha derecha.
+        document.getElementById('flecha_derecha').style.display = 'inline';
+      } else {
+        // Ocultar la flecha derecha.
+        document.getElementById('flecha_derecha').style.display = 'none';
+      }
+    }
   </script>
 </body>
 </html>
