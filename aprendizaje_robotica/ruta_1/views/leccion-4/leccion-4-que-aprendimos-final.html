@@ -112,8 +112,9 @@
       /* Estilos del puzzle */
       .puzzle-columns {
         display: flex; /* Arreglar media query */
-        margin-bottom: 30px;
-        width: 100%;
+        margin-bottom: 20px;
+        margin-left: 200px;
+        width: 60%;
       }
 
       .image-column, .drop-column {
@@ -130,31 +131,31 @@
       }
 
       .silueta {
-        width: 120px !important;
+        width: 100px !important;
       }
 
       .cabeza {
-        width: 120px !important;
+        width: 100px !important;
       }
 
       .ojos {
-        width: 120px !important;
+        width: 100px !important;
       }
 
       .boca {
-        width: 120px !important;
+        width: 100px !important;
       }
 
       .articulaciones {
-        width: 120px !important;
+        width: 100px !important;
       }
 
       .oreja {
-        width: 120px !important;
+        width: 100px !important;
       }
 
       .cintura {
-        width: 120px !important;
+        width: 100px !important;
       }
 
       .draggable-image {
@@ -192,13 +193,15 @@
       }
 
       .drop-zone {
-        width: 250px; /* Adjust drop zone width to match your images */
-        height: 80px; /* Adjust drop zone height for puzzle pieces */
-        border: 2px dashed gray;
+        width: 100px; /* Adjust drop zone width to match your images */
+        height: 100px; /* Adjust drop zone height for puzzle pieces */
+        border: 2px solid gray;
         border-radius: 5px;
+        /*
         display: auto;
         justify-content: center;
         align-items: center;
+        */
         transition: background-color 0.3s ease, border-color 0.3s ease;
         margin: 0 auto;
       }
@@ -420,7 +423,7 @@
         >
           <div
             class="image-column"
-            style="border: ridge 1px transparent; padding: 100px;"
+            style="border: ridge 1px transparent; padding: 50px;"
           >
             <div class="image-list">
               <img
@@ -476,13 +479,13 @@
           </div>
 
           <div class="drop-column" style="border: ridge 1px transparent;">
-            <div class="drop-zones">
+            <div class="drop-zones" style="border: ridge 1px transparent;">
               <!-- Orden correcto ded las piezas--->
               <div
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/Sensor_audicion.png');
                   background-repeat: no-repeat;
-                  background-size: 70px 70px;
+                  background-size: 100px 100px;
                   background-position: center;
                 "
               >
@@ -492,7 +495,7 @@
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/Actuadores_articulacion.png');
                   background-repeat: no-repeat;
-                  background-size: 70px 70px;
+                  background-size: 100px 100px;
                   background-position: center;
                 "
               >
@@ -502,7 +505,7 @@
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/Actuador.png');
                   background-repeat: no-repeat;
-                  background-size: 70px 70px;
+                  background-size: 100px 100px;
                   background-position: center;
                 "
               >
@@ -513,7 +516,7 @@
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/Controlador.png');
                   background-repeat: no-repeat;
-                  background-size: 70px 70px;
+                  background-size: 100px 100px;
                   background-position: center;
                 "
               >
@@ -523,7 +526,7 @@
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/Fuente_alimentacion.png');
                   background-repeat: no-repeat;
-                  background-size: 70px 70px;
+                  background-size: 100px 100px;
                   background-position: center;
                 "
               >
@@ -533,7 +536,7 @@
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/Sensor_vista.png');
                   background-repeat: no-repeat;
-                  background-size: 70px 70px;
+                  background-size: 100px 100px;
                   background-position: center;
                 "
               >
@@ -544,7 +547,7 @@
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/esqueleto.png');
                   background-repeat: no-repeat;
-                  background-size: 70px 70px;
+                  background-size: 100px 100px;
                   background-position: center;
                 "
               >
@@ -555,6 +558,7 @@
         </div>
 
         <br>
+
         <p
           id="message"
           class="text-center"
