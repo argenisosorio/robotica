@@ -111,14 +111,18 @@
 
       /* Estilos del puzzle */
       .puzzle-columns {
-        display: flex; /* Arreglar media query */
-        margin-bottom: 20px;
-        margin-left: 200px;
-        width: 60%;
+        display: flex;
+        justify-content: center;      /* Centra horizontalmente ambos grupos */
+        align-items: flex-start;      /* Alinea arriba ambas columnas */
+        margin: 0 auto;               /* Centra el contenedor */
+        width: 70%;                   /* Ajusta el ancho según prefieras */
       }
 
       .image-column, .drop-column {
-        flex: 1;
+        flex: 0 0 50%;                /* Ambas columnas ocupan el mismo ancho */
+        display: flex;
+        flex-direction: column;
+        align-items: center;          /* Centra el contenido de cada columna */
       }
 
       h2 {
@@ -424,7 +428,12 @@
         >
           <div
             class="image-column"
-            style="border: ridge 1px transparent; padding: 50px;"
+            style="
+              border: ridge 1px transparent;
+              padding: 50px;
+              margin-left: -250px;
+              margin-top: -50px;
+            "
           >
             <div class="image-list">
               <img
@@ -479,10 +488,14 @@
             </div>
           </div>
 
-          <div class="drop-column" style="border: ridge 1px transparent;">
+          <div
+            class="drop-column"
+            style="border: ridge 1px transparent; margin-left: -100px;"
+          >
             <div class="drop-zones" style="border: ridge 1px transparent;">
               <!-- Orden correcto ded las piezas--->
               <div
+                class="mb-2"
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/Sensor_audicion.png');
                   background-repeat: no-repeat;
@@ -493,6 +506,7 @@
                 <div class="drop-zone" data-id="oreja"></div>
               </div>
               <div
+                class="mb-2"
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/Actuadores_articulacion.png');
                   background-repeat: no-repeat;
@@ -503,6 +517,7 @@
                 <div class="drop-zone" data-id="articulaciones"></div>
               </div>
               <div
+                class="mb-2"
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/Actuador.png');
                   background-repeat: no-repeat;
@@ -512,8 +527,8 @@
               >
                 <div class="drop-zone" data-id="boca"></div>
               </div>
-
               <div
+                class="mb-2"
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/Controlador.png');
                   background-repeat: no-repeat;
@@ -524,6 +539,7 @@
                 <div class="drop-zone" data-id="cabeza"></div>
               </div>
               <div
+                class="mb-2"
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/Fuente_alimentacion.png');
                   background-repeat: no-repeat;
@@ -534,6 +550,7 @@
                 <div class="drop-zone" data-id="cintura"></div>
               </div>
               <div
+                class="mb-2"
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/Sensor_vista.png');
                   background-repeat: no-repeat;
@@ -543,8 +560,8 @@
               >
                 <div class="drop-zone" data-id="ojos"></div>
               </div>
-
               <div
+                class="mb-2"
                 style="
                   background-image: url('../../static/img/Leccion-4/prueba/col-der/esqueleto.png');
                   background-repeat: no-repeat;
@@ -559,6 +576,7 @@
         </div>
 
         <br>
+        <br>
 
         <p
           id="message"
@@ -569,6 +587,7 @@
             margin-bottom: 40px;"
           >
         </p>
+
 
         <div class="row" style="border: ridge 1px transparent; margin-top: -20px;">
           <div class="col-3"></div>
