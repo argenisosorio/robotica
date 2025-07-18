@@ -165,13 +165,10 @@
       .draggable-image {
         width: 150px; /* Adjust image size as needed */
         height: auto;
-        /*border: 2px solid #fbbf00;*/
         border-radius: 8px;
         cursor: grab;
         transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 10px;
-        margin-right: 20px !important;
       }
 
       .draggable-image:hover {
@@ -185,17 +182,6 @@
         border-color: #2a9d8f;
       }
 
-      /* Drop Zones */
-      .drop-zones {
-        display: auto;
-        flex-direction: column;
-        gap: 10px; /* Smaller gap for the puzzle pieces */
-        width: 100%;
-        /* Example for a horizontal puzzle */
-        /* If your puzzle is vertical, use: flex-direction: column; */
-        /*border: ridge 1px red;*/
-      }
-
       .drop-zone {
         width: 100px; /* Adjust drop zone width to match your images */
         height: 100px; /* Adjust drop zone height for puzzle pieces */
@@ -207,7 +193,6 @@
         align-items: center;
         */
         transition: background-color 0.3s ease, border-color 0.3s ease;
-        margin: 0 auto;
       }
 
       .drop-zone.drag-over {
@@ -223,14 +208,6 @@
       .drop-zone.incorrect {
         border-color: #dc3545; /* Red for incorrect placement */
         background-color: #f8d7da;
-      }
-
-      .drop-zone img {
-        max-width: 100%;
-        max-height: 100%;
-        border: none; /* Remove border from dropped image */
-        cursor: default; /* Not draggable anymore */
-        border-radius: 0; /* No border radius when part of puzzle */
       }
 
       /* Buttons and Message */
@@ -422,155 +399,162 @@
         </div>
         <!-- Final de Instrucciones -->
         <br>
-        <div
-          class="puzzle-columns text-center"
-          style="border: ridge 1px transparent;"
-        >
+        <div class="row" style="border: ridge 1px transparent;">
           <div
-            class="image-column"
-            style="
-              border: ridge 1px transparent;
-              padding: 50px;
-              margin-left: -250px;
-              margin-top: -50px;
-            "
+            class="col-6 text-center"
+            style="border: ridge 1px transparent;"
           >
-            <div class="image-list">
+            <div class="" style="border: ridge 1px transparent;">
               <img
                 src="../../static/img/Leccion-4/prueba/col-izq/articulaciones.png"
                 alt="Puzzle Pieza 1"
-                class="draggable-image articulaciones"
+                class="draggable-image articulaciones mb-2"
                 draggable="true"
                 data-id="articulaciones"
               >
+            </div>
+            <div>
               <img
                 src="../../static/img/Leccion-4/prueba/col-izq/boca.png"
                 alt="Puzzle Pieza 2"
-                class="draggable-image boca"
+                class="draggable-image boca mb-2"
                 draggable="true"
                 data-id="boca"
               >
-              <img
-                src="../../static/img/Leccion-4/prueba/col-izq/cabeza.png"
-                alt="Puzzle Pieza 3"
-                class="draggable-image cabeza"
-                draggable="true"
-                data-id="cabeza"
-              >
-              <img
-                src="../../static/img/Leccion-4/prueba/col-izq/cintura.png"
-                alt="Puzzle Pieza 4"
-                class="draggable-image cintura"
-                draggable="true"
-                data-id="cintura"
-              >
-              <img
-                src="../../static/img/Leccion-4/prueba/col-izq/ojos.png"
-                alt="Puzzle Pieza 5"
-                class="draggable-image ojos"
-                draggable="true"
-                data-id="ojos"
-              >
-              <img
-                src="../../static/img/Leccion-4/prueba/col-izq/oreja.png"
-                alt="Puzzle Pieza 6"
-                class="draggable-image oreja"
-                draggable="true"
-                data-id="oreja"
-              >
-              <img
-                src="../../static/img/Leccion-4/prueba/col-izq/silueta.png"
-                alt="Puzzle Pieza 7"
-                class="draggable-image silueta"
-                draggable="true"
-                data-id="silueta"
-              >
+            </div>
+            <div>
+            <img
+              src="../../static/img/Leccion-4/prueba/col-izq/cabeza.png"
+              alt="Puzzle Pieza 3"
+              class="draggable-image cabeza mb-2"
+              draggable="true"
+              data-id="cabeza"
+            >
+            </div>
+            <div>
+            <img
+              src="../../static/img/Leccion-4/prueba/col-izq/cintura.png"
+              alt="Puzzle Pieza 4"
+              class="draggable-image cintura mb-2"
+              draggable="true"
+              data-id="cintura"
+            >
+            </div>
+            <div>
+            <img
+              src="../../static/img/Leccion-4/prueba/col-izq/ojos.png"
+              alt="Puzzle Pieza 5"
+              class="draggable-image ojos mb-2"
+              draggable="true"
+              data-id="ojos"
+            >
+            </div>
+            <div>
+            <img
+              src="../../static/img/Leccion-4/prueba/col-izq/oreja.png"
+              alt="Puzzle Pieza 6"
+              class="draggable-image oreja mb-2"
+              draggable="true"
+              data-id="oreja"
+            >
+            </div>
+            <div>
+            <img
+              src="../../static/img/Leccion-4/prueba/col-izq/silueta.png"
+              alt="Puzzle Pieza 7"
+              class="draggable-image silueta mb-2"
+              draggable="true"
+              data-id="silueta"
+            >
             </div>
           </div>
 
           <div
-            class="drop-column"
-            style="border: ridge 1px transparent; margin-left: -100px;"
+            class="col-6"
+            style="border: ridge 1px transparent;"
           >
-            <div class="drop-zones" style="border: ridge 1px transparent;">
-              <!-- Orden correcto ded las piezas--->
+
+            <!-- Orden correcto ded las piezas--->
+            <div
+              class="mb-2"
+              style="
+                background-image: url('../../static/img/Leccion-4/prueba/col-der/Sensor_audicion.png');
+                background-repeat: no-repeat;
+                background-size: 100px 100px;
+                background-position: left;
+                border: ridge 1px transparent;
+              "
+            >
               <div
-                class="mb-2"
-                style="
-                  background-image: url('../../static/img/Leccion-4/prueba/col-der/Sensor_audicion.png');
-                  background-repeat: no-repeat;
-                  background-size: 100px 100px;
-                  background-position: center;
-                "
-              >
-                <div class="drop-zone" data-id="oreja"></div>
-              </div>
-              <div
-                class="mb-2"
-                style="
-                  background-image: url('../../static/img/Leccion-4/prueba/col-der/Actuadores_articulacion.png');
-                  background-repeat: no-repeat;
-                  background-size: 100px 100px;
-                  background-position: center;
-                "
-              >
-                <div class="drop-zone" data-id="articulaciones"></div>
-              </div>
-              <div
-                class="mb-2"
-                style="
-                  background-image: url('../../static/img/Leccion-4/prueba/col-der/Actuador.png');
-                  background-repeat: no-repeat;
-                  background-size: 100px 100px;
-                  background-position: center;
-                "
-              >
-                <div class="drop-zone" data-id="boca"></div>
-              </div>
-              <div
-                class="mb-2"
-                style="
-                  background-image: url('../../static/img/Leccion-4/prueba/col-der/Controlador.png');
-                  background-repeat: no-repeat;
-                  background-size: 100px 100px;
-                  background-position: center;
-                "
-              >
-                <div class="drop-zone" data-id="cabeza"></div>
-              </div>
-              <div
-                class="mb-2"
-                style="
-                  background-image: url('../../static/img/Leccion-4/prueba/col-der/Fuente_alimentacion.png');
-                  background-repeat: no-repeat;
-                  background-size: 100px 100px;
-                  background-position: center;
-                "
-              >
-                <div class="drop-zone" data-id="cintura"></div>
-              </div>
-              <div
-                class="mb-2"
-                style="
-                  background-image: url('../../static/img/Leccion-4/prueba/col-der/Sensor_vista.png');
-                  background-repeat: no-repeat;
-                  background-size: 100px 100px;
-                  background-position: center;
-                "
-              >
-                <div class="drop-zone" data-id="ojos"></div>
-              </div>
-              <div
-                class="mb-2"
-                style="
-                  background-image: url('../../static/img/Leccion-4/prueba/col-der/esqueleto.png');
-                  background-repeat: no-repeat;
-                  background-size: 100px 100px;
-                  background-position: center;
-                "
-              >
-                <div class="drop-zone" data-id="silueta"></div>
-              </div>
+                class="drop-zone"
+                data-id="oreja"
+              ></div>
+            </div>
+            <div
+              class="mb-2"
+              style="
+                background-image: url('../../static/img/Leccion-4/prueba/col-der/Actuadores_articulacion.png');
+                background-repeat: no-repeat;
+                background-size: 100px 100px;
+                background-position: left;
+              "
+            >
+              <div class="drop-zone" data-id="articulaciones"></div>
+            </div>
+            <div
+              class="mb-2"
+              style="
+                background-image: url('../../static/img/Leccion-4/prueba/col-der/Actuador.png');
+                background-repeat: no-repeat;
+                background-size: 100px 100px;
+                background-position: left;
+              "
+            >
+              <div class="drop-zone" data-id="boca"></div>
+            </div>
+            <div
+              class="mb-2"
+              style="
+                background-image: url('../../static/img/Leccion-4/prueba/col-der/Controlador.png');
+                background-repeat: no-repeat;
+                background-size: 100px 100px;
+                background-position: left;
+              "
+            >
+              <div class="drop-zone" data-id="cabeza"></div>
+            </div>
+            <div
+              class="mb-2"
+              style="
+                background-image: url('../../static/img/Leccion-4/prueba/col-der/Fuente_alimentacion.png');
+                background-repeat: no-repeat;
+                background-size: 100px 100px;
+                background-position: left;
+              "
+            >
+              <div class="drop-zone" data-id="cintura"></div>
+            </div>
+            <div
+              class="mb-2"
+              style="
+                background-image: url('../../static/img/Leccion-4/prueba/col-der/Sensor_vista.png');
+                background-repeat: no-repeat;
+                background-size: 100px 100px;
+                background-position: left;
+              "
+            >
+              <div class="drop-zone" data-id="ojos"></div>
+            </div>
+            <div
+              class="mb-2"
+              style="
+                background-image: url('../../static/img/Leccion-4/prueba/col-der/esqueleto.png');
+                background-repeat: no-repeat;
+                background-size: 100px 100px;
+                background-position: left;
+              "
+            >
+              <div class="drop-zone" data-id="silueta"></div>
             </div>
           </div>
         </div>
