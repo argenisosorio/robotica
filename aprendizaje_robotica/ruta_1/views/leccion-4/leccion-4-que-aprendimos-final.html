@@ -595,6 +595,48 @@
           <div class="col-3"></div>
         </div>
         <br>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body d-flex flex-column align-items-center">
+                <div class="text-center">
+                  <h3 class="mb-3">¡Excelente trabajo! Has completado el todas las Lecciones</h3>
+                  <video
+                    controls
+                    style="width: 90%; height: auto; border-radius: 15px;"
+                    src="http://cursos.cenditel.gob.ve/files/2025/07/ruta-1-leccion-I-bienvenida-de-robotica-compressed.mp4"
+                  >
+                  </video>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Final de Modal -->
       </div>
     </div>
     <!-- End Right Column -->
@@ -803,6 +845,9 @@
             if (allCorrect) {
               messageDisplay.textContent = '¡Felicidades! ¡Has completado la imagen correctamente!';
               messageDisplay.style.color = '#28a745';
+              // Abrir modal con el video.
+              const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+              modal.show();
             } else {
               messageDisplay.textContent = '¡Sigue intentándolo! Algunas piezas no están en su lugar.';
               messageDisplay.style.color = '#dc3545';
