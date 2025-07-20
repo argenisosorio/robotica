@@ -7,6 +7,10 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <link rel="icon" href="../../static/img/favicon.png">
     <title>Curso - Aprendizaje en Robótica</title>
+    <!-- Loader de carga -->
+    <link rel="stylesheet" href="../../static/css/loader.css" type="text/css"/>
+    <!-- Loader de carga script js -->
+    <script src="../../static/js/loader.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- font-awesome-6 -->
@@ -110,6 +114,12 @@
     </style>
   </head>
 <body>
+  <!-- Mostrar la imagen como spinner de carga -->
+  <div class="spinner-container" id="spinnerContainer">
+    <!-- Cambiar el div con la clase "spinner" por una imagen -->
+    <img src="../../static/img/favicon.png" alt="" class="spinner-img">
+  </div>
+
   <!-- Barra de progreso -->
   <div id="progressBar"></div>
 

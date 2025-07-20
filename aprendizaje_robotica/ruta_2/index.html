@@ -21,6 +21,9 @@
     <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/d8a448a1-3b64-4ed3-befe-36ba9a12abc8.png?token=zsPBgKxpm5n7vKL5Dqq7X_RgMgSc1EBkiBnB946xIS8&height=800&width=800&expires=33276060856">
     <link rel="icon" href="static/img/favicon.png">
     <title>Curso - Aprendizaje en Robótica</title>
+    <link rel="stylesheet" href="static/css/loader.css" type="text/css"/>
+    <!-- Loader de carga script js -->
+    <script src="static/js/loader.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- font-awesome-6 -->
@@ -155,6 +158,12 @@
     </style>
   </head>
 <body>
+<!-- Mostrar la imagen como spinner de carga -->
+<div class="spinner-container" id="spinnerContainer">
+  <!-- Cambiar el div con la clase "spinner" por una imagen -->
+  <img src="static/img/favicon.png" alt="" class="spinner-img">
+</div>
+
 <!-- Barra de progreso -->
 <div id="progressBar"></div>
   <audio id="hover-sound0" src="static/audio/banner_sound_effect.mp3"></audio>
