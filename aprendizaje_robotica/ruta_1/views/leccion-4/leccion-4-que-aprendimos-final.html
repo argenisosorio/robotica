@@ -7,6 +7,9 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <link rel="icon" href="../../static/img/favicon.png">
     <title>Curso - Aprendizaje en Robótica</title>
+    <link rel="stylesheet" href="../../static/css/loader_lec4.css" type="text/css"/>
+    <!-- Loader de carga script js -->
+    <script src="../../static/js/loader.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- font-awesome-6 -->
@@ -248,6 +251,12 @@
     </style>
   </head>
 <body>
+  <!-- Mostrar la imagen como spinner de carga -->
+  <div class="spinner-container" id="spinnerContainer">
+    <!-- Cambiar el div con la clase "spinner" por una imagen -->
+    <img src="../../static/img/favicon.png" alt="" class="spinner-img">
+  </div>
+
   <!-- Barra de progreso -->
   <div id="progressBarAmarilla"></div>
 
@@ -732,7 +741,7 @@
         const dropZones = document.querySelectorAll('.drop-zone');
         const checkButton = document.getElementById('check-button');
         const messageDisplay = document.getElementById('message');
-        const imageList = document.querySelector('.image-list'); // Parent of original images
+        // const imageList = document.querySelector('.image-list'); // Parent of original images
 
         let draggedImage = null; // Stores the image currently being dragged
 
@@ -792,10 +801,10 @@
                                 // Replace its placeholder (if any) or just append
                                 // For simplicity, we just append it back to the list
                                 // A more robust solution would re-insert it at its original index.
-                                imageList.appendChild(existingImage);
+                                // imageList.appendChild(existingImage);
                             } else {
                                 // If somehow it wasn't an original image, just append to list
-                                imageList.appendChild(existingImage);
+                                // imageList.appendChild(existingImage);
                             }
                         }
                     }
@@ -824,10 +833,10 @@
                 }
 
                 if (!placedImage) {
-                    console.log(`Zona ${zoneId} está vacía`);
+                    // console.log(`Zona ${zoneId} está vacía`);
                     allCorrect = false;
                 } else if (placedImage.dataset.id !== zoneId) {
-                    console.log(`Zona ${zoneId} tiene imagen ${placedImage.dataset.id}`);
+                    // console.log(`Zona ${zoneId} tiene imagen ${placedImage.dataset.id}`);
                     allCorrect = false;
                 }
 
@@ -863,7 +872,7 @@
             // Fisher-Yates shuffle
             for (let i = imagesArray.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
-                imageList.insertBefore(imagesArray[j], imagesArray[i]); // Re-insert at new position
+                // imageList.insertBefore(imagesArray[j], imagesArray[i]); // Re-insert at new position
             }
         };
         shuffleImages(); // Call on page load
