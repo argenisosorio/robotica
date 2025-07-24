@@ -167,6 +167,7 @@
           width: 150px; /* Adjust image size as needed */
           height: auto;
           border-radius: 8px;
+          border: ridge 1px gray;
           cursor: grab;
           transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -225,7 +226,7 @@
 
         #check-button {
           width: 200px;
-          background-color: #fbbf00;
+          background-color: #d26da1;
           color: #FFFFFF;
         }
 
@@ -360,11 +361,11 @@
         >
           <div class="col-6" style="border: ridge 1px transparent;">
             <h4 class="text-centerr" style="border: ridge 1px transparent;">
-              🔍 Relaciona las partes del robot
+              🔍 Arma el Robot
             </h4>
             <div class="text-centerr" style="border: ridge 1px transparent;">
-              Arrastra cada imagen de la izquierda hasta el cuadro de la
-              derecha donde esté la función que realiza.
+              Arrastra cada pieza de la izquierda y colócala en el espacio
+              correspondiente de la derecha para armar el Robot.
             </div>
             <div class="text-centerr" style="border: ridge 1px transparent;">
               ✅ Cuando termines, haz clic en Verificar para saber cómo lo hiciste.
@@ -388,53 +389,8 @@
         <div class="row" style="border: ridge 1px transparent;">
           <div
             class="col-6 text-center"
-            style="border: ridge 1px red;"
+            style="border: ridge 1px transparent;"
           >
-              <!-- 1 -->
-              <img
-                src="../../static/img/Leccion-2/test/col-izq/1.png"
-                alt="Puzzle Pieza 1"
-                class="draggable-image articulaciones mb-2"
-                draggable="true"
-                data-id="1"
-              >
-
-              <!-- 2 -->
-              <img
-                src="../../static/img/Leccion-2/test/col-izq/2.png"
-                alt="Puzzle Pieza 2"
-                class="draggable-image boca mb-2"
-                draggable="true"
-                data-id="2"
-              >
-
-              <!-- 3 -->
-              <img
-                src="../../static/img/Leccion-2/test/col-izq/3.png"
-                alt="Puzzle Pieza 3"
-                class="draggable-image cabeza mb-2"
-                draggable="true"
-                data-id="3"
-              >
-
-              <!-- 4 -->
-              <img
-                src="../../static/img/Leccion-2/test/col-izq/4.png"
-                alt="Puzzle Pieza 4"
-                class="draggable-image cintura mb-2"
-                draggable="true"
-                data-id="4"
-              >
-
-              <!-- 5 -->
-              <img
-                src="../../static/img/Leccion-2/test/col-izq/5.png"
-                alt="Puzzle Pieza 5"
-                class="draggable-image ojos mb-2"
-                draggable="true"
-                data-id="5"
-              >
-
               <!-- 6 -->
               <img
                 src="../../static/img/Leccion-2/test/col-izq/6.png"
@@ -442,15 +398,7 @@
                 class="draggable-image oreja mb-2"
                 draggable="true"
                 data-id="6"
-              >
-
-              <!-- 7 -->
-              <img
-                src="../../static/img/Leccion-2/test/col-izq/7.png"
-                alt="Puzzle Pieza 7"
-                class="draggable-image silueta mb-2"
-                draggable="true"
-                data-id="7"
+                style="width: 100px;"
               >
 
               <!-- 8 -->
@@ -460,12 +408,73 @@
                 class="draggable-image silueta mb-2"
                 draggable="true"
                 data-id="8"
+                style="width: 100px;"
+              >
+
+              <!-- 2 -->
+              <img
+                src="../../static/img/Leccion-2/test/col-izq/2.png"
+                alt="Puzzle Pieza 2"
+                class="draggable-image boca mb-2"
+                draggable="true"
+                data-id="2"
+                style="width: 100px;"
+              >
+
+              <!-- 4 -->
+              <img
+                src="../../static/img/Leccion-2/test/col-izq/4.png"
+                alt="Puzzle Pieza 4"
+                class="draggable-image cintura mb-2"
+                draggable="true"
+                data-id="4"
+                style="width: 100px;"
+              >
+
+              <!-- 5 -->
+              <img
+                src="../../static/img/Leccion-2/test/col-izq/5.png"
+                alt="Puzzle Pieza 5"
+                class="draggable-image ojos mb-2"
+                draggable="true"
+                data-id="5"
+                style="width: 100px;"
+              >
+
+              <!-- 1 -->
+              <img
+                src="../../static/img/Leccion-2/test/col-izq/1.png"
+                alt="Puzzle Pieza 1"
+                class="draggable-image articulaciones mb-2"
+                draggable="true"
+                data-id="1"
+                style="width: 100px;"
+              >
+
+              <!-- 3 -->
+              <img
+                src="../../static/img/Leccion-2/test/col-izq/3.png"
+                alt="Puzzle Pieza 3"
+                class="draggable-image cabeza mb-2"
+                draggable="true"
+                data-id="3"
+                style="width: 100px;"
+              >
+
+              <!-- 7 -->
+              <img
+                src="../../static/img/Leccion-2/test/col-izq/7.png"
+                alt="Puzzle Pieza 7"
+                class="draggable-image silueta mb-2"
+                draggable="true"
+                data-id="7"
+                style="width: 100px;"
               >
           </div>
 
           <div
             class="col-6"
-            style="border: ridge 1px blue;"
+            style="border: ridge 1px transparent;"
           >
 
             <table class="" border="1px" cellpadding="0px" cellspacing="0px">
