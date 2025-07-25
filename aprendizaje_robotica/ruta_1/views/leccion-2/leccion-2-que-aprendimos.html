@@ -649,6 +649,19 @@
           <div class="col-3"></div>
         </div>
         <br>
+        <!-- Siguiente módulo -->
+        <div id="next-section" style="display: none;">
+          <br>
+          <div class="text-center mt-5 mb-5">
+            <a href="../leccion-3/leccion-3.html">
+              <img
+                src="../../static/img/Leccion-2/nina-next-3.png"
+                class="llave-inglesa"
+              >
+            </a>
+          </div>
+        </div>
+        <!-- Final de Siguiente módulo -->
       </div>
       <!-- End Right Column -->
     </div>
@@ -857,9 +870,13 @@
             if (allCorrect) {
               messageDisplay.textContent = '¡Felicidades! ¡Has completado la imagen correctamente!';
               messageDisplay.style.color = '#28a745';
+              // Mostrar la sección siguiente
+              document.getElementById('next-section').style.display = 'block';
             } else {
               messageDisplay.textContent = '¡Sigue intentándolo! Algunas piezas no están en su lugar.';
               messageDisplay.style.color = '#dc3545';
+              // Ocultar la sección siguiente.
+              document.getElementById('next-section').style.display = 'none';
             }
         });
 
