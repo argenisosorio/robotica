@@ -54,10 +54,26 @@
         .col-3 {
           width: 100%;
           margin-bottom: 10px;
+          /*border: ridge 1px red !important;*/
         }
 
-        .col-9 {
+        .col-9-mq-m {
           width: 100%;
+          border: ridge 1px #d26da1 !important;
+        }
+
+        .row-mq-m {
+          border: ridge 1px transparent !important;
+          width: 200%;
+          margin-left: 0px !important;
+          margin-top: -30px !important;
+          display: block;
+          margin-bottom: 10px;
+        }
+
+        .col-6 {
+          /*border: ridge 1px blue !important;*/
+          margin-bottom: 10px;
         }
 
         .btn-success img {
@@ -66,6 +82,31 @@
 
         h1 {
           font-size: 30px;
+        }
+
+        .row-puzzle-mq-m {
+          border: ridge 1px red !important;
+          margin-top: -50px;
+        }
+
+        .col-6-puzzle-mq-m {
+          border: ridge 1px blue !important;
+        }
+
+        .draggable-image {
+          width: 70px !important;
+          border: ridge 1px gray !important;
+          border-radius: 5px;
+        }
+
+        .col-6-puzzle-der-mq-m {
+          border: ridge 1px orange !important;
+          /*width: 100%;*/
+        }
+
+        .table-mq-m {
+          border: ridge 1px orange !important;
+          width: 100%;
         }
       }
 
@@ -341,16 +382,16 @@
 
       <!-- Right Column -->
       <div
-        class="col-9"
+        class="col-9 col-9-mq-m"
         style="
           border: ridge 1px #d26da1;
           border-radius: 5px;
         "
       >
-<br>
+        <br>
         <!-- Instrucciones -->
         <div
-          class="row"
+          class="row row-mq-m"
           style="
             border: ridge 1px lightgray;
             border-radius: 5px;
@@ -386,9 +427,9 @@
         </div>
         <!-- Final de Instrucciones -->
         <br>
-        <div class="row" style="border: ridge 1px transparent;">
+        <div class="row row-puzzle-mq-m" style="border: ridge 1px transparent;">
           <div
-            class="col-6 text-center"
+            class="col-6 col-6-puzzle-mq-m text-center"
             style="border: ridge 1px transparent;"
           >
               <!-- 6 -->
@@ -473,11 +514,11 @@
           </div>
 
           <div
-            class="col-6"
+            class="col-6 col-6-puzzle-der-mq-m"
             style="border: ridge 1px transparent;"
           >
 
-            <table class="" border="1px" cellpadding="0px" cellspacing="0px">
+            <table class="table-mq-m" border="1px" cellpadding="0px" cellspacing="0px">
               <tr>
                   <!-- Celda 1-->
                   <td>
