@@ -169,3 +169,15 @@ a:hover {
   transition: transform 1s ease;
   filter: contrast(120%);
 }
+
+/* Dispositivos pequeños (teléfonos) */
+@media (max-width: 576px) {
+  .mq-h1-text {
+    font-size: 25px !important;
+  }
+
+  .logo-brand-mq {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+}
