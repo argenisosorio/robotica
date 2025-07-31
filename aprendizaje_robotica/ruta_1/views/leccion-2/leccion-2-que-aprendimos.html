@@ -153,8 +153,16 @@
         }
 
         #reset-button {
-          /*border: ridge 1px red !important;*/
           width: 100%;
+          background-color: #e63946;
+          color: #fff;
+          border-color: #e63946;
+        }
+
+        #reset-button:hover {
+          width: 100%;
+          background-color: #c9303d;
+          transform: translateY(-2px);
         }
       }
 
@@ -179,14 +187,6 @@
 
       /* Dispositivos grandes (computadoras de escritorio) */
       @media (min-width: 769px) {
-        #check-button {
-          /*border: ridge 1px blue !important;*/
-        }
-
-        #reset-button {
-          /*border: ridge 1px green !important;*/
-        }
-
         .col-3 {
           width: 25%;
         }
