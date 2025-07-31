@@ -54,7 +54,6 @@
         .col-3 {
           width: 100%;
           margin-bottom: 10px;
-          /*border: ridge 1px red !important;*/
         }
 
         .col-9-mq-m {
@@ -85,13 +84,13 @@
         }
 
         .row-puzzle-mq-m {
-          border: ridge 1px red !important;
+          border: ridge 1px transparent !important;
           margin-top: -50px;
           display: block;
         }
 
         .col-6-puzzle-mq-m {
-          border: ridge 1px blue !important;
+          border: ridge 1px transparent !important;
           width: 100%;
         }
 
@@ -102,14 +101,60 @@
         }
 
         .col-6-puzzle-der-mq-m {
-          border: ridge 1px orange !important;
+          border: ridge 1px transparent !important;
           width: 100%;
+          margin-left: 100px;
         }
 
         .table-mq-m {
-          border: ridge 1px lime !important;
+          border: ridge 1px transparent !important;
+        }
+        .table-mq-m tr td div .drop-zone {
+          width: 70px;
+          height: 70px;
+        }
+
+        .table-tr-mq-m-1 {
+          border: ridge 1px transparent !important;
+        }
+
+        .table-tr-mq-m-2 {
+          border: ridge 1px transparent !important;
+        }
+
+        .table-tr-mq-m-3 {
+          border: ridge 1px transparent !important;
+        }
+
+        .table-tr-mq-m-4 {
+          border: ridge 1px transparent !important;
+        }
+
+        .td-mq-m {
+          border: ridge 1px gray !important;
+        }
+
+        .drop-zone {
+          border: ridge 1px transparent !important;
+        }
+
+        #next-section {
+          border: ridge 1px transparent !important;
+          margin-top: -75px;
+        }
+
+        .llave-inglesa {
+          width: 150px;
+        }
+
+        #check-button {
           width: 100%;
-          overflow-x: auto;
+          /*border: ridge 1px red !important;*/
+        }
+
+        #reset-button {
+          /*border: ridge 1px red !important;*/
+          width: 100%;
         }
       }
 
@@ -134,6 +179,14 @@
 
       /* Dispositivos grandes (computadoras de escritorio) */
       @media (min-width: 769px) {
+        #check-button {
+          /*border: ridge 1px blue !important;*/
+        }
+
+        #reset-button {
+          /*border: ridge 1px green !important;*/
+        }
+
         .col-3 {
           width: 25%;
         }
@@ -233,11 +286,6 @@
           height: 100px; /* Adjust drop zone height for puzzle pieces */
           border: 2px solid transparent;
           border-radius: 5px;
-          /*
-          display: auto;
-          justify-content: center;
-          align-items: center;
-          */
           transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
@@ -275,6 +323,7 @@
         }
 
         #reset-button {
+          width: 200px;
           background-color: #e63946;
           color: #fff;
           border-color: #e63946;
@@ -290,6 +339,12 @@
           font-size: 1.2em;
           font-weight: bold;
           color: #457b9d;
+        }
+
+        .celd {
+          background-repeat: no-repeat;
+          background-size: 100px 100px;
+          background-position: left;
         }
       }
     </style>
@@ -393,31 +448,22 @@
       >
         <br>
         <!-- Instrucciones -->
-        <div
-          class="row row-mq-m"
-          style="
-            border: ridge 1px lightgray;
-            border-radius: 5px;
-            margin-left: 30px;
-            margin-right: 30px;
-            padding: 20px;
-          "
-        >
-          <div class="col-6" style="border: ridge 1px transparent;">
-            <h4 class="text-centerr" style="border: ridge 1px transparent;">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h4 class="text-center">
               🔍 Arma el Robot
             </h4>
-            <div class="text-centerr" style="border: ridge 1px transparent;">
+            <div class="text-center">
               Arrastra cada pieza de la izquierda y colócala en el espacio
               correspondiente de la derecha para armar el Robot.
             </div>
-            <div class="text-centerr" style="border: ridge 1px transparent;">
+            <div class="text-center">
               ✅ Cuando termines, haz clic en Verificar para saber cómo lo hiciste.
               <br>
               🔄 Si te equivocaste, puedes pulsar Reiniciar y volver a intentarlo.
             </div>
           </div>
-          <div class="col-6" style="border: ridge 1px transparent;">
+          <div class="col-12 col-md-6">
             <div>
               <div>
                 <img src="../../static/img/nina-cara.jpg" width="100px" class="mb-2">
@@ -430,11 +476,8 @@
         </div>
         <!-- Final de Instrucciones -->
         <br>
-        <div class="row row-puzzle-mq-m" style="border: ridge 1px transparent;">
-          <div
-            class="col-6 col-6-puzzle-mq-m text-center"
-            style="border: ridge 1px transparent;"
-          >
+        <div class="row" style="border: ridge 1px transparent;">
+          <div class="col-12 col-md-6 col-6-puzzle-mq-m text-center">
               <!-- 6 -->
               <img
                 src="../../static/img/Leccion-2/test/col-izq/6.png"
@@ -517,137 +560,120 @@
           </div>
 
           <div
-            class="col-6 col-6-puzzle-der-mq-m"
+            class="col-12 col-md-6 col-6-puzzle-der-mq-m"
             style="border: ridge 1px transparent;"
           >
             <table class="table-mq-m" border="1px" cellpadding="0px" cellspacing="0px">
-              <tr>
-                  <!-- Celda 1-->
-                  <td>
-                    <div
-                      style="
-                        background-image: url('../../static/img/Leccion-2/test/col-der/1.png');
-                        background-repeat: no-repeat;
-                        background-size: 100px 100px;
-                        background-position: left;
-                        border: ridge 1px transparent;
-                      "
-                    >
-                      <div data-id="1" class="drop-zone"></div>
-                    </div>
-                  </td>
-                  <!-- Final Celda 1-->
+              <tr class="table-tr-mq-m-1">
+                <!-- Celda 1-->
+                <td class="td-mq-m">
+                  <div
+                    class="celd"
+                    style="
+                      background-image: url('../../static/img/Leccion-2/test/col-der/1.png');
+                    "
+                  >
+                    <div data-id="1" class="drop-zone"></div>
+                  </div>
+                </td>
+                <!-- Final Celda 1-->
 
-                  <!-- Celda 2 -->
-                  <td>
-                    <div
-                      style="
-                        background-image: url('../../static/img/Leccion-2/test/col-der/2.png');
-                        background-repeat: no-repeat;
-                        background-size: 100px 100px;
-                        background-position: left;
-                      "
-                    >
-                      <div class="drop-zone" data-id="2"></div>
-                    </div>
-                  </td>
-                  <!-- Final Celda 2 -->
-                </tr>
-
-                <tr>
-                  <!-- Celda 3 -->
-                  <td>
-                    <div
-                      style="
-                        background-image: url('../../static/img/Leccion-2/test/col-der/3.png');
-                        background-repeat: no-repeat;
-                        background-size: 100px 100px;
-                        background-position: left;
-                      "
-                    >
-                      <div class="drop-zone" data-id="3"></div>
-                    </div>
-                  </td>
-                  <!-- Final Celda 3 -->
-
-                  <!-- Celda 4 -->
-                  <td>
-                    <div
-                      style="
-                        background-image: url('../../static/img/Leccion-2/test/col-der/4.png');
-                        background-repeat: no-repeat;
-                        background-size: 100px 100px;
-                        background-position: left;
-                      "
-                    >
-                      <div class="drop-zone" data-id="4"></div>
-                    </div>
-                  </td>
-                  <!-- Final Celda 4 -->
-                </tr>
-
-                <tr>
-                  <!-- Celda 5 -->
-                  <td>
-                    <div
-                      style="
-                        background-image: url('../../static/img/Leccion-2/test/col-der/5.png');
-                        background-repeat: no-repeat;
-                        background-size: 100px 100px;
-                        background-position: left;
-                      "
-                    >
-                      <div class="drop-zone" data-id="5"></div>
-                    </div>
-                  </td>
-                  <!-- Final Celda 5 -->
-
-                  <!-- Celda 6 -->
-                  <td>
-                    <div
-                      style="
-                        background-image: url('../../static/img/Leccion-2/test/col-der/6.png');
-                        background-repeat: no-repeat;
-                        background-size: 100px 100px;
-                        background-position: left;
-                      "
-                    >
-                      <div class="drop-zone" data-id="6"></div>
-                    </div>
-                  </td>
-                  <!-- Final Celda 6 -->
+                <!-- Celda 2 -->
+                <td class="td-mq-m">
+                  <div
+                    class="celd"
+                    style="
+                      background-image: url('../../static/img/Leccion-2/test/col-der/2.png');
+                    "
+                  >
+                    <div class="drop-zone" data-id="2"></div>
+                  </div>
+                </td>
+                <!-- Final Celda 2 -->
               </tr>
 
-              <tr>
-                  <!-- Celda 7 -->
-                  <td>
-                    <div
-                      style="
-                        background-image: url('../../static/img/Leccion-2/test/col-der/7.png');
-                        background-repeat: no-repeat;
-                        background-size: 100px 100px;
-                        background-position: left;
-                      "
-                    >
-                      <div class="drop-zone" data-id="7"></div>
-                    </div>
-                  </td>
-                  <!-- Final Celda 7 -->
+              <tr class="table-tr-mq-m-2">
+                <!-- Celda 3 -->
+                <td class="td-mq-m">
+                  <div
+                    class="celd"
+                    style="
+                      background-image: url('../../static/img/Leccion-2/test/col-der/3.png');
+                    "
+                  >
+                    <div class="drop-zone" data-id="3"></div>
+                  </div>
+                </td>
+                <!-- Final Celda 3 -->
 
-                  <!-- Celda 8 -->
-                  <td>
-                    <div
-                      style="
-                        background-image: url('../../static/img/Leccion-2/test/col-der/8.png');
-                        background-repeat: no-repeat;
-                        background-size: 100px 100px;
-                        background-position: left;
-                      "
-                    >
-                      <div class="drop-zone" data-id="8"></div>
-                    </div>
-                  </td>
-                  <!-- Final Celda 8 -->
+                <!-- Celda 4 -->
+                <td class="td-mq-m">
+                  <div
+                    class="celd"
+                    style="
+                      background-image: url('../../static/img/Leccion-2/test/col-der/4.png');
+                    "
+                  >
+                    <div class="drop-zone" data-id="4"></div>
+                  </div>
+                </td>
+                <!-- Final Celda 4 -->
+              </tr>
+
+              <tr class="table-tr-mq-m-3">
+                <!-- Celda 5 -->
+                <td class="td-mq-m">
+                  <div
+                    class="celd"
+                    style="
+                      background-image: url('../../static/img/Leccion-2/test/col-der/5.png');
+                    "
+                  >
+                    <div class="drop-zone" data-id="5"></div>
+                  </div>
+                </td>
+                <!-- Final Celda 5 -->
+
+                <!-- Celda 6 -->
+                <td class="td-mq-m">
+                  <div
+                    class="celd"
+                    style="
+                      background-image: url('../../static/img/Leccion-2/test/col-der/6.png');
+                    "
+                  >
+                    <div class="drop-zone" data-id="6"></div>
+                  </div>
+                </td>
+                <!-- Final Celda 6 -->
+              </tr>
+
+              <tr class="table-tr-mq-m-4">
+                <!-- Celda 7 -->
+                <td class="td-mq-m">
+                  <div
+                    class="celd"
+                    style="
+                      background-image: url('../../static/img/Leccion-2/test/col-der/7.png');
+                    "
+                  >
+                    <div class="drop-zone" data-id="7"></div>
+                  </div>
+                </td>
+                <!-- Final Celda 7 -->
+
+                <!-- Celda 8 -->
+                <td class="td-mq-m">
+                  <div
+                    class="celd"
+                    style="
+                      background-image: url('../../static/img/Leccion-2/test/col-der/8.png');
+                    "
+                  >
+                    <div class="drop-zone" data-id="8"></div>
+                  </div>
+                </td>
+                <!-- Final Celda 8 -->
               </tr>
             </table>
           </div>
@@ -678,13 +704,12 @@
               <b>Verificar</b>
             </button>
           </div>
-          <div class="col-3">
+          <div class="col-3" style="border: ridge 1px transparent;">
             <button
               id="reset-button"
               type="button"
               class="btn btn-success"
               onclick="window.location.reload();"
-              style="width: 50%;"
             >
               <b>Reiniciar</b>
             </button>
