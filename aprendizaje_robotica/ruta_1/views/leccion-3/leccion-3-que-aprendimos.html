@@ -51,6 +51,10 @@
 
       /* Dispositivos pequeños (teléfonos) */
       @media (max-width: 576px) {
+        .llave-inglesa {
+          width: 150px;
+        }
+
         .col-3 {
           width: 100%;
           margin-bottom: 10px;
@@ -66,6 +70,47 @@
 
         h1 {
           font-size: 30px;
+        }
+
+        .p-mq-m {
+          font-size: 15px !important;
+          /*border: ridge 1px red;*/
+        }
+
+        .nina-cara-container-mq-m {
+          /*border: ridge 1px red;*/
+          width: 70px;
+        }
+
+        .btns-mq-m {
+          /*border: ridge 1px red;*/
+        }
+
+        #check-button {
+          width: 100% !important;
+        }
+
+        #reset-button {
+          margin-top: 10px;
+          width: 100% !important;
+        }
+
+        .modal-dialog {
+          max-width: 95vw;
+          margin: 10px auto;
+          margin-left: 10px;
+        }
+        .modal-content {
+          width: 100%;
+          box-sizing: border-box;
+        }
+        #modalImage {
+          width: 80% !important;
+          max-width: 250px;
+          height: auto;
+        }
+        #modalText {
+          font-size: 18px !important;
         }
       }
 
@@ -224,11 +269,53 @@
           border-radius: 5px;
         "
       >
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body d-flex flex-column align-items-center">
+                <img
+                  id="modalImage"
+                  alt="image"
+                  style="width: 50%; display: none;"
+                >
+                <hr>
+                <h2 class="text-center" id="modalText"></h2>
+                <span id="helpText"></span>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Final de Modal -->
+
         <!-- Pregunta 1 -->
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">1. Programar es dar instrucciones a la computadora en un lenguaje que ella entiende:</p>
+              <p class="p-mq-m" style="font-size: 30px;">
+                1. Programar es dar instrucciones a la computadora en un lenguaje que ella entiende:
+              </p>
               <div class="mb-3" style="font-size: 20px;">
                 <label>
                   <input type="radio" name="pregunta_1" value="true" required> Verdadero
@@ -245,7 +332,12 @@
           <div class="col-4" style="border: ridge 1px transparent;">
             <div>
               <div class="mt-4">
-                <img src="../../static/img/nina-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nina-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
               <audio controls>
                 <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
@@ -261,7 +353,7 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">2. Un algoritmo es una lista de instrucciones para que una computadora sepa qué hacer:</p>
+              <p class="p-mq-m" style="font-size: 30px;">2. Un algoritmo es una lista de instrucciones para que una computadora sepa qué hacer:</p>
               <div class="mb-3" style="font-size: 20px;">
                 <label>
                   <input type="radio" name="pregunta_2" value="true"> Verdadero
@@ -278,7 +370,12 @@
           <div class="col-4" style="border: ridge 1px transparent;">
             <div>
               <div class="mt-4">
-                <img src="../../static/img/nino-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nino-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
               <audio controls>
                 <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
@@ -294,7 +391,7 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">3. Si estás cocinando siguiendo una receta, entonces estás siguiendo un:</p>
+              <p class="p-mq-m" style="font-size: 30px;">3. Si estás cocinando siguiendo una receta, entonces estás siguiendo un:</p>
               <div class="mb-3" style="font-size: 20px;">
                 <label>
                   <input type="radio" name="pregunta_3" value="true"> Un videojuego
@@ -311,7 +408,12 @@
           <div class="col-4" style="border: ridge 1px transparent;">
             <div>
               <div class="mt-4">
-                <img src="../../static/img/nina-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nina-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
               <audio controls>
                 <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
@@ -327,7 +429,7 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">4. Si quieres cepillarte los dientes, el primer paso de tu algoritmo es:</p>
+              <p class="p-mq-m" style="font-size: 30px;">4. Si quieres cepillarte los dientes, el primer paso de tu algoritmo es:</p>
               <div class="mb-3" style="font-size: 20px;">
                 <label>
                   <input type="radio" name="pregunta_4" value="true"> Mirar televisión
@@ -344,7 +446,12 @@
           <div class="col-4" style="border: ridge 1px transparent;">
             <div>
               <div class="mt-4">
-                <img src="../../static/img/nino-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nino-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
               <audio controls>
                 <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
@@ -360,7 +467,7 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">5. Los colores de los bloques de Scratch indican lo que hace cada bloque:</p>
+              <p class="p-mq-m" style="font-size: 30px;">5. Los colores de los bloques de Scratch indican lo que hace cada bloque:</p>
               <div class="mb-3" style="font-size: 20px;">
                 <label>
                   <input type="radio" name="pregunta_5" value="true"> Verdadero
@@ -377,7 +484,12 @@
           <div class="col-4" style="border: ridge 1px transparent;">
             <div>
               <div class="mt-4">
-                <img src="../../static/img/nina-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nina-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
               <audio controls>
                 <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
@@ -390,8 +502,9 @@
         <hr>
 
         <!-- Botones del formulario -->
-        <div class="text-center mb-3">
+        <div class="text-center mb-3 btns-mq-m">
           <button
+            id="check-button"
             type="button"
             class="btn btn-success active"
             onclick="checkAnswers()"
@@ -425,31 +538,6 @@
         </div>
         <!-- Final de Siguiente módulo -->
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body d-flex flex-column align-items-center">
-                <img
-                  id="modalImage"
-                  src=""
-                  alt=""
-                  style="width: 50%; display: none;"
-                >
-                <hr>
-                <h2 class="text-center" id="modalText"></h2>
-                <span id="helpText"></span>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Final de Modal -->
       </div>
       <!-- End Right Column -->
     </div>
