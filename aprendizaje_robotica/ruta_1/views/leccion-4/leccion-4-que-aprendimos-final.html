@@ -190,6 +190,9 @@
         height: 100px; /* Adjust drop zone height for puzzle pieces */
         border: 2px solid gray;
         border-radius: 5px;
+        min-width: 70px;
+        min-height: 70px;
+        z-index: 1;
         /*
         display: auto;
         justify-content: center;
@@ -863,6 +866,40 @@
               messageDisplay.textContent = '¡Sigue intentándolo! Algunas piezas no están en su lugar.';
               messageDisplay.style.color = '#dc3545';
             }
+        });
+
+        // --- Soporte táctil para móviles ---
+        let touchImage = null;
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        draggableImages.forEach(image => {
+          image.addEventListener('touchstart', function(e) {
+            touchImage = e.target;
+            touchImage.classList.add('dragging');
+          });
+
+          image.addEventListener('touchmove', function(e) {
+            if (touchImage) {
+              e.preventDefault();
+            }
+          }, { passive: false });
+
+          image.addEventListener('touchend', function(e) {
+            if (!touchImage) return;
+            touchImage.classList.remove('dragging');
+            // Oculta temporalmente la imagen para detectar el drop-zone debajo
+            touchImage.style.visibility = 'hidden';
+            const touch = e.changedTouches[0];
+            const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+            touchImage.style.visibility = 'visible';
+            if (dropTarget && dropTarget.classList.contains('drop-zone')) {
+              dropTarget.appendChild(touchImage);
+              touchImage.classList.add('dropped');
+              touchImage.style.display = 'block';
+            }
+            touchImage = null;
+          });
         });
 
         // Initial shuffle of images in the left column (optional, but good for replayability)
