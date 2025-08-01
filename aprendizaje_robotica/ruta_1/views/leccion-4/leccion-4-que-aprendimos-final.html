@@ -49,6 +49,34 @@
         height: auto;
       }
 
+      /* Estilos generales */
+      .custom-audio {
+        width: 100%;
+        max-width: 400px; /* Ancho máximo para desktop */
+        margin: 1rem 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Cambiar colores (navegadores compatibles) */
+      .custom-audio::-webkit-media-controls-panel {
+        background: #f8f9fa;
+        border-radius: 10px;
+      }
+
+      .custom-audio::-webkit-media-controls-play-button,
+      .custom-audio::-webkit-media-controls-mute-button {
+        filter: brightness(0.8);
+      }
+
+      /* Media Query para móviles */
+      @media (max-width: 768px) {
+        .custom-audio {
+          max-width: 100%; /* Ocupa todo el ancho en móviles */
+          border-radius: 5px;
+        }
+      }
+
       /* Dispositivos pequeños (teléfonos) */
       @media (max-width: 576px) {
         .col-3 {
@@ -66,6 +94,26 @@
 
         h1 {
           font-size: 30px;
+        }
+
+        .row-mq-m {
+          border: ridge 1px transparent !important;
+        }
+
+        .col-6-mq-m {
+          border: ridge 1px transparent !important;
+        }
+
+        #check-button {
+          width: 100% !important;
+        }
+
+        #reset-button {
+          width: 100% !important;
+        }
+
+        .text-mq-m {
+          font-size: 0.8em;
         }
       }
 
@@ -374,7 +422,7 @@
         <br>
         <!-- Instrucciones -->
         <div
-          class="row"
+          class="row row-mq-m"
           style="
             border: ridge 1px lightgray;
             border-radius: 5px;
@@ -383,28 +431,31 @@
             padding: 20px;
           "
         >
-          <div class="col-6" style="border: ridge 1px transparent;">
-            <h4 class="text-centerr" style="border: ridge 1px transparent;">
+          <div class="col-6 col-6-mq-m" style="border: ridge 1px transparent;">
+            <h4 class="text-mq-m" style="border: ridge 1px transparent;">
               🔍 Relaciona las partes del robot
             </h4>
-            <div class="text-centerr" style="border: ridge 1px transparent;">
+            <div class="text-mq-m" style="border: ridge 1px transparent;">
               Arrastra cada imagen de la izquierda hasta el cuadro de la
               derecha donde esté la función que realiza.
             </div>
-            <div class="text-centerr" style="border: ridge 1px transparent;">
+            <div class="text-mq-m" style="border: ridge 1px transparent;">
               ✅ Cuando termines, haz clic en Verificar para saber cómo lo hiciste.
               <br>
               🔄 Si te equivocaste, puedes pulsar Reiniciar y volver a intentarlo.
             </div>
           </div>
-          <div class="col-6" style="border: ridge 1px transparent;">
+          <div class="col-6 col-6-mq-m" style="border: ridge 1px transparent;">
             <div>
               <div>
                 <img src="../../static/img/nina-cara.jpg" width="100px" class="mb-2">
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -582,7 +633,6 @@
             margin-bottom: 40px;"
           >
         </p>
-
 
         <div class="row" style="border: ridge 1px transparent; margin-top: -20px;">
           <div class="col-3"></div>
