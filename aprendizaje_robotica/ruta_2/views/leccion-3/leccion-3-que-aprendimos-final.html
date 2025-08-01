@@ -49,8 +49,40 @@
         height: auto;
       }
 
+      /* Estilos generales */
+      .custom-audio {
+        width: 100%;
+        max-width: 400px; /* Ancho máximo para desktop */
+        margin: 1rem 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Cambiar colores (navegadores compatibles) */
+      .custom-audio::-webkit-media-controls-panel {
+        background: #f8f9fa;
+        border-radius: 10px;
+      }
+
+      .custom-audio::-webkit-media-controls-play-button,
+      .custom-audio::-webkit-media-controls-mute-button {
+        filter: brightness(0.8);
+      }
+
+      /* Media Query para móviles */
+      @media (max-width: 768px) {
+        .custom-audio {
+          max-width: 100%; /* Ocupa todo el ancho en móviles */
+          border-radius: 5px;
+        }
+      }
+
       /* Dispositivos pequeños (teléfonos) */
       @media (max-width: 576px) {
+        .llave-inglesa {
+          width: 150px;
+        }
+
         .col-3 {
           width: 100%;
           margin-bottom: 10px;
@@ -66,6 +98,54 @@
 
         h1 {
           font-size: 30px;
+        }
+
+        .h3-mq-m {
+          font-size: 20px !important;
+        }
+
+        .p-mq-m {
+          font-size: 15px !important;
+        }
+
+        .label-mq-m {
+          font-size: 12px !important;
+          margin-bottom: 10px;
+        }
+
+        .nina-cara-container-mq-m {
+          width: 70px;
+        }
+
+        .nina-cara-audio-container-mq-m {
+          margin-left: -50px;
+        }
+
+        #check-button {
+          width: 100% !important;
+        }
+
+        #reset-button {
+          margin-top: 10px;
+          width: 100% !important;
+        }
+
+        .modal-dialog {
+          max-width: 95vw;
+          margin: 10px auto;
+          margin-left: 10px;
+        }
+        .modal-content {
+          width: 100%;
+          box-sizing: border-box;
+        }
+        #modalImage {
+          width: 80% !important;
+          max-width: 250px;
+          height: auto;
+        }
+        #modalText {
+          font-size: 18px !important;
         }
       }
 
@@ -224,8 +304,9 @@
           border-radius: 5px;
         "
       >
-        <h3 style="padding: 15px; margin-top: 10px;">
-          A continuación te presentamos varias preguntas, en cada una debes seleccionar una sola opción:
+        <h3 class="h3-mq-m" style="padding: 15px; margin-top: 10px;">
+          A continuación te presentamos varias preguntas, en cada una debes
+          seleccionar una sola opción:
         </h3>
 
         <hr>
@@ -234,30 +315,38 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">1. Programar es:</p>
+              <p class="p-mq-m" style="font-size: 30px;">1. Programar es:</p>
               <div class="mb-3" style="font-size: 20px;">
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_1" value="false" required> Mirar la televisión.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_1" value="true"> Dar instrucciones detalladas a la computadora, paso a paso en un lenguaje que ella entiende.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_1" value="false"> Jugar con tus amigos.
                 </label>
               </div>
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
-                <img src="../../static/img/nina-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nina-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -269,34 +358,42 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">2. Un algoritmo es:</p>
+              <p class="p-mq-m" style="font-size: 30px;">2. Un algoritmo es:</p>
               <div class="mb-3" style="font-size: 20px;">
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_2" value="false"> Un tipo de robot.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_2" value="false"> Un juego de computadora.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_2" value="true"> Una serie de pasos ordenados para hacer algo.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_2" value="false"> Un dibujo divertido.
                 </label>
               </div>
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
-                <img src="../../static/img/nino-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nino-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -308,34 +405,42 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">3. Si quieres cepillarte los dientes, el primer paso de tu algoritmo es:</p>
+              <p class="p-mq-m" style="font-size: 30px;">3. Si quieres cepillarte los dientes, el primer paso de tu algoritmo es:</p>
               <div class="mb-3" style="font-size: 20px;">
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_3" value="false"> Enjuagarse con agua.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_3" value="false"> Mirar televisión.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_3" value="false"> Comer un dulce.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_3" value="true"> Poner crema en el cepillo.
                 </label>
               </div>
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
-                <img src="../../static/img/nina-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nina-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -347,34 +452,44 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">4. Si estás cocinando siguiendo una receta, entonces estás siguiendo un:</p>
+              <p class="p-mq-m" style="font-size: 30px;">
+                4. Si estás cocinando siguiendo una receta, entonces estás siguiendo un:
+              </p>
               <div class="mb-3" style="font-size: 20px;">
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_4" value="true"> Un algoritmo.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_4" value="false"> Un videojuego.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_4" value="false"> Un personaje.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_4" value="false"> Un robot.
                 </label>
               </div>
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
-                <img src="../../static/img/nino-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nino-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -386,34 +501,44 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">5. Los colores de los bloques de Scratch indican:</p>
+              <p class="p-mq-m" style="font-size: 30px;">
+                5. Los colores de los bloques de Scratch indican:
+              </p>
               <div class="mb-3" style="font-size: 20px;">
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_5" value="false"> Qué tan rápido se mueven los personajes.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_5" value="true"> Qué hace cada bloque.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_5" value="false"> Cuántos personajes hay en la pantalla.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_5" value="false"> Si el juego es divertido.
                 </label>
               </div>
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
-                <img src="../../static/img/nina-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nina-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -425,34 +550,45 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">6. Scratch tiene bloques de colores que se unen como piezas de un rompecabezas para:</p>
+              <p class="p-mq-m" style="font-size: 30px;">
+                6. Scratch tiene bloques de colores que se unen como piezas de
+                un rompecabezas para:
+              </p>
               <div class="mb-3" style="font-size: 20px;">
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_6" value="true"> Dar instrucciones a la computadora y crear cosas.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_6" value="false"> Hacer una torre muy alta.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_6" value="false"> Guardar tus juguetes.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_6" value="false"> Contar hasta diez.
                 </label>
               </div>
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
-                <img src="../../static/img/nino-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nino-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -463,6 +599,7 @@
         <!-- Botones del formulario -->
         <div class="text-center mb-3">
           <button
+            id="check-button"
             type="button"
             class="btn btn-success active"
             onclick="checkAnswers()"

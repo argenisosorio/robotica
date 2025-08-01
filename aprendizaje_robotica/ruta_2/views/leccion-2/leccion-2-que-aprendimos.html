@@ -49,8 +49,40 @@
         height: auto;
       }
 
+      /* Estilos generales */
+      .custom-audio {
+        width: 100%;
+        max-width: 400px; /* Ancho máximo para desktop */
+        margin: 1rem 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Cambiar colores (navegadores compatibles) */
+      .custom-audio::-webkit-media-controls-panel {
+        background: #f8f9fa;
+        border-radius: 10px;
+      }
+
+      .custom-audio::-webkit-media-controls-play-button,
+      .custom-audio::-webkit-media-controls-mute-button {
+        filter: brightness(0.8);
+      }
+
+      /* Media Query para móviles */
+      @media (max-width: 768px) {
+        .custom-audio {
+          max-width: 100%; /* Ocupa todo el ancho en móviles */
+          border-radius: 5px;
+        }
+      }
+
       /* Dispositivos pequeños (teléfonos) */
       @media (max-width: 576px) {
+        .llave-inglesa {
+          width: 150px;
+        }
+
         .col-3 {
           width: 100%;
           margin-bottom: 10px;
@@ -66,6 +98,54 @@
 
         h1 {
           font-size: 30px;
+        }
+
+        .p-mq-m {
+          font-size: 15px !important;
+        }
+
+        .h3-mq-m {
+          font-size: 20px !important;
+        }
+
+        .label-mq-m {
+          font-size: 12px !important;
+          margin-bottom: 10px;
+        }
+
+        .nina-cara-container-mq-m {
+          width: 70px;
+        }
+
+        .nina-cara-audio-container-mq-m {
+          margin-left: -50px;
+        }
+
+        #check-button {
+          width: 100% !important;
+        }
+
+        #reset-button {
+          margin-top: 10px;
+          width: 100% !important;
+        }
+
+        .modal-dialog {
+          max-width: 95vw;
+          margin: 10px auto;
+          margin-left: 10px;
+        }
+        .modal-content {
+          width: 100%;
+          box-sizing: border-box;
+        }
+        #modalImage {
+          width: 80% !important;
+          max-width: 250px;
+          height: auto;
+        }
+        #modalText {
+          font-size: 18px !important;
         }
       }
 
@@ -210,8 +290,9 @@
         "
       >
 
-        <h3 style="padding: 15px; margin-top: 10px;">
-          A continuación te presentamos varias preguntas, en cada una debes seleccionar una sola opción:
+        <h3 class="h3-mq-m" style="padding: 15px; margin-top: 10px;">
+          A continuación te presentamos varias preguntas, en cada una debes
+          seleccionar una sola opción:
         </h3>
 
         <hr>
@@ -220,32 +301,40 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">
+              <p class="p-mq-m" style="font-size: 30px;">
                 1. Para dedicarse a la robótica es necesario saber:
               </p>
               <div class="mb-3" style="font-size: 20px;">
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_1" value="true" required> Ingeniería, Electrónica y Software.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_1" value="false"> Matemática, Física y Química.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_1" value="false"> Astronomía, Mecánica y Construcción.
                 </label>
               </div>
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
-                <img src="../../static/img/nina-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nina-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -257,32 +346,40 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">
+              <p class="p-mq-m" style="font-size: 30px;">
                 2. ¿Por qué los robots “se dan cuenta” de lo que hay a su alrededor?:
               </p>
               <div class="mb-3" style="font-size: 20px;">
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_2" value="false"> Porque tienen sentimientos.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_2" value="true"> Porque tienen sensores, que les permiten ver, oír y sentir parecido a como lo hacemos nosotros.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_2" value="false"> Porque se pueden mover de manera independiente para aprender.
                 </label>
               </div>
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
-                <img src="../../static/img/nino-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nino-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -294,33 +391,41 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">
+              <p class="p-mq-m" style="font-size: 30px;">
                 3. ¿Es la Robótica capaz de impactar muchos campos de la vida
                 diaria, como la Industria, la Medicina, el Transporte entre otros?:
               </p>
               <div class="mb-3" style="font-size: 20px;">
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_3" value="false"> No es capaz de hacerlo, la Robótica es solo para ingenieros.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_3" value="false"> Podría hacerlo pero será solo dentro de mucho tiempo.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_3" value="true"> Sí lo puede hacer, de hecho ya está cambiando muchas cosas del mundo en que vivimos.
                 </label>
               </div>
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
-                <img src="../../static/img/nina-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nina-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -332,32 +437,40 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p style="font-size: 30px;">
+              <p class="p-mq-m" style="font-size: 30px;">
                 4. Los robots tienen sensores y actuadores, éstos permiten:
               </p>
               <div class="mb-3" style="font-size: 20px;">
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_4" value="false"> Moverse y pensar.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_4" value="true"> Moverse y percibir el entorno.
                 </label>
                 <br>
-                <label>
+                <label class="label-mq-m">
                   <input type="radio" name="pregunta_4" value="false"> Pensar y razonar.
                 </label>
               </div>
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
-                <img src="../../static/img/nino-cara.jpg" width="150px" class="mb-2">
+                <img
+                  class="nina-cara-container-mq-m"
+                  src="../../static/img/nino-cara.jpg"
+                  width="150px"
+                  class="mb-2"
+                >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -368,6 +481,7 @@
         <!-- Botones del formulario -->
         <div class="text-center mb-3">
           <button
+            id="check-button"
             type="button"
             class="btn btn-success active"
             onclick="checkAnswers()"

@@ -49,6 +49,34 @@
         height: auto;
       }
 
+      /* Estilos generales */
+      .custom-audio {
+        width: 100%;
+        max-width: 400px; /* Ancho máximo para desktop */
+        margin: 1rem 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Cambiar colores (navegadores compatibles) */
+      .custom-audio::-webkit-media-controls-panel {
+        background: #f8f9fa;
+        border-radius: 10px;
+      }
+
+      .custom-audio::-webkit-media-controls-play-button,
+      .custom-audio::-webkit-media-controls-mute-button {
+        filter: brightness(0.8);
+      }
+
+      /* Media Query para móviles */
+      @media (max-width: 768px) {
+        .custom-audio {
+          max-width: 100%; /* Ocupa todo el ancho en móviles */
+          border-radius: 5px;
+        }
+      }
+
       /* Dispositivos pequeños (teléfonos) */
       @media (max-width: 576px) {
         .col-3 {
@@ -66,6 +94,30 @@
 
         h1 {
           font-size: 30px;
+        }
+
+        .row-mq-m {
+          border: ridge 1px transparent !important;
+        }
+
+        .col-6-mq-m {
+          border: ridge 1px transparent !important;
+        }
+
+        #check-button {
+          width: 100% !important;
+        }
+
+        #reset-button {
+          width: 100% !important;
+        }
+
+        .text-mq-m {
+          font-size: 0.8em;
+        }
+
+        .container-cada-audio {
+          margin-top: 15px;
         }
       }
 
@@ -190,6 +242,9 @@
         height: 100px; /* Adjust drop zone height for puzzle pieces */
         border: 2px solid gray;
         border-radius: 5px;
+        min-width: 70px;
+        min-height: 70px;
+        z-index: 1;
         /*
         display: auto;
         justify-content: center;
@@ -371,7 +426,7 @@
         <br>
         <!-- Instrucciones -->
         <div
-          class="row"
+          class="row row-mq-m"
           style="
             border: ridge 1px lightgray;
             border-radius: 5px;
@@ -380,11 +435,11 @@
             padding: 20px;
           "
         >
-          <div class="col-6" style="border: ridge 1px transparent;">
-            <h4 class="text-centerr" style="border: ridge 1px transparent;">
+          <div class="col col-6-mq-m" style="border: ridge 1px transparent;">
+            <h4 class="text-mq-m" style="border: ridge 1px transparent;">
               🔍 Relaciona las partes del robot con su nombre y función
             </h4>
-            <div style="border: ridge 1px transparent;">
+            <div class="text-mq-m" style="border: ridge 1px transparent;">
               📌 A la izquierda, verás imágenes de distintas partes del robot humanoide.
               <br>
               📄 A la derecha, están los nombres de esas partes acompañados por una breve descripción de su función.
@@ -396,14 +451,21 @@
               🔄 Si te equivocaste, puedes pulsar Reiniciar y volver a intentarlo.
             </div>
           </div>
-          <div class="col-6" style="border: ridge 1px transparent;">
-            <div>
+          <div class="col col-6-mq-m" style="border: ridge 1px transparent;">
+            <div class="container-cada-audio">
               <div>
-                <img src="../../static/img/nina-cara.jpg" width="100px" class="mb-2">
+                <img
+                  src="../../static/img/nina-cara.jpg"
+                  width="100px"
+                  class="mb-2"
+                >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -582,7 +644,6 @@
           >
         </p>
 
-
         <div class="row" style="border: ridge 1px transparent; margin-top: -20px;">
           <div class="col-3"></div>
           <div class="col-3" style="border: ridge 1px transparent;">
@@ -628,7 +689,7 @@
               </div>
               <div class="modal-body d-flex flex-column align-items-center">
                 <div class="text-center">
-                  <h3 class="mb-3">¡Excelente trabajo! Has completado el todas las Lecciones</h3>
+                  <h3 class="mb-3">¡Felicidades! Has completado todas las Lecciones</h3>
                   <video
                     controls
                     style="width: 90%; height: auto; border-radius: 15px;"
@@ -865,6 +926,40 @@
               messageDisplay.textContent = '¡Sigue intentándolo! Algunas piezas no están en su lugar.';
               messageDisplay.style.color = '#dc3545';
             }
+        });
+
+        // --- Soporte táctil para móviles ---
+        let touchImage = null;
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        draggableImages.forEach(image => {
+          image.addEventListener('touchstart', function(e) {
+            touchImage = e.target;
+            touchImage.classList.add('dragging');
+          });
+
+          image.addEventListener('touchmove', function(e) {
+            if (touchImage) {
+              e.preventDefault();
+            }
+          }, { passive: false });
+
+          image.addEventListener('touchend', function(e) {
+            if (!touchImage) return;
+            touchImage.classList.remove('dragging');
+            // Oculta temporalmente la imagen para detectar el drop-zone debajo
+            touchImage.style.visibility = 'hidden';
+            const touch = e.changedTouches[0];
+            const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+            touchImage.style.visibility = 'visible';
+            if (dropTarget && dropTarget.classList.contains('drop-zone')) {
+              dropTarget.appendChild(touchImage);
+              touchImage.classList.add('dropped');
+              touchImage.style.display = 'block';
+            }
+            touchImage = null;
+          });
         });
 
         // Initial shuffle of images in the left column (optional, but good for replayability)
