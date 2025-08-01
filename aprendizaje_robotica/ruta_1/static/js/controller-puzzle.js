@@ -135,23 +135,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     draggableImages.forEach(image => {
         image.addEventListener('touchstart', function(e) {
-        /*alert('Tocaste la imagen con data-id: ' + image.dataset.id);*/
-        touchImage = e.target;
-        touchImage.classList.add('dragging');
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
+            touchImage = e.target;
+            touchImage.classList.add('dragging');
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
         });
+
+        // Evita el scroll mientras arrastras la imagen
+        image.addEventListener('touchmove', function(e) {
+            if (touchImage) {
+                e.preventDefault(); // Esto bloquea el scroll de la página
+            }
+        }, { passive: false });
+
         image.addEventListener('touchend', function(e) {
-        if (!touchImage) return;
-        touchImage.classList.remove('dragging');
-        const touch = e.changedTouches[0];
-        const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
-        if (dropTarget && dropTarget.classList.contains('drop-zone')) {
-            dropTarget.appendChild(touchImage);
-            touchImage.classList.add('dropped');
-            touchImage.style.display = 'block';
-        }
-        touchImage = null;
+            if (!touchImage) return;
+            touchImage.classList.remove('dragging');
+            const touch = e.changedTouches[0];
+            const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+            if (dropTarget && dropTarget.classList.contains('drop-zone')) {
+                dropTarget.appendChild(touchImage);
+                touchImage.classList.add('dropped');
+                touchImage.style.display = 'block';
+            }
+            touchImage = null;
         });
     });
 });
