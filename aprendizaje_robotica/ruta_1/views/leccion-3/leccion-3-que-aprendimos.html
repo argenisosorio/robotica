@@ -49,6 +49,34 @@
         height: auto;
       }
 
+      /* Estilos generales */
+      .custom-audio {
+        width: 100%;
+        max-width: 400px; /* Ancho máximo para desktop */
+        margin: 1rem 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Cambiar colores (navegadores compatibles) */
+      .custom-audio::-webkit-media-controls-panel {
+        background: #f8f9fa;
+        border-radius: 10px;
+      }
+
+      .custom-audio::-webkit-media-controls-play-button,
+      .custom-audio::-webkit-media-controls-mute-button {
+        filter: brightness(0.8);
+      }
+
+      /* Media Query para móviles */
+      @media (max-width: 768px) {
+        .custom-audio {
+          max-width: 100%; /* Ocupa todo el ancho en móviles */
+          border-radius: 5px;
+        }
+      }
+
       /* Dispositivos pequeños (teléfonos) */
       @media (max-width: 576px) {
         .llave-inglesa {
@@ -82,8 +110,9 @@
           width: 70px;
         }
 
-        .btns-mq-m {
+        .nina-cara-audio-container-mq-m {
           /*border: ridge 1px red;*/
+          margin-left: -50px;
         }
 
         #check-button {
@@ -330,7 +359,7 @@
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
                 <img
                   class="nina-cara-container-mq-m"
@@ -339,9 +368,12 @@
                   class="mb-2"
                 >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -353,7 +385,9 @@
         <div class="row">
           <div class="col-8" style="border: ridge 1px transparent;">
             <div style="padding: 20px; border: ridge 1px transparent;">
-              <p class="p-mq-m" style="font-size: 30px;">2. Un algoritmo es una lista de instrucciones para que una computadora sepa qué hacer:</p>
+              <p class="p-mq-m" style="font-size: 30px;">
+                2. Un algoritmo es una lista de instrucciones para que una computadora sepa qué hacer:
+              </p>
               <div class="mb-3" style="font-size: 20px;">
                 <label>
                   <input type="radio" name="pregunta_2" value="true"> Verdadero
@@ -368,7 +402,7 @@
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
                 <img
                   class="nina-cara-container-mq-m"
@@ -377,9 +411,12 @@
                   class="mb-2"
                 >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -406,7 +443,7 @@
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
                 <img
                   class="nina-cara-container-mq-m"
@@ -415,9 +452,12 @@
                   class="mb-2"
                 >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -444,7 +484,7 @@
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
                 <img
                   class="nina-cara-container-mq-m"
@@ -453,9 +493,12 @@
                   class="mb-2"
                 >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -482,7 +525,7 @@
             </div>
           </div>
           <div class="col-4" style="border: ridge 1px transparent;">
-            <div>
+            <div class="nina-cara-audio-container-mq-m">
               <div class="mt-4">
                 <img
                   class="nina-cara-container-mq-m"
@@ -491,9 +534,12 @@
                   class="mb-2"
                 >
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
@@ -502,7 +548,7 @@
         <hr>
 
         <!-- Botones del formulario -->
-        <div class="text-center mb-3 btns-mq-m">
+        <div class="text-center mb-3">
           <button
             id="check-button"
             type="button"
