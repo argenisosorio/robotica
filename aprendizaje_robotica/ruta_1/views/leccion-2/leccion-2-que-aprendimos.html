@@ -18,6 +18,34 @@
     <!-- Custom styles for this template -->
     <link href="../../static/css/theme.css" rel="stylesheet">
     <style>
+      /* Estilos generales */
+      .custom-audio {
+        width: 100%;
+        max-width: 400px; /* Ancho máximo para desktop */
+        margin: 1rem 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Cambiar colores (navegadores compatibles) */
+      .custom-audio::-webkit-media-controls-panel {
+        background: #f8f9fa;
+        border-radius: 10px;
+      }
+
+      .custom-audio::-webkit-media-controls-play-button,
+      .custom-audio::-webkit-media-controls-mute-button {
+        filter: brightness(0.8);
+      }
+
+      /* Media Query para móviles */
+      @media (max-width: 768px) {
+        .custom-audio {
+          max-width: 100%; /* Ocupa todo el ancho en móviles */
+          border-radius: 5px;
+        }
+      }
+
       .list-group-item {
         background-color: #fff !important;
         border-color: #fff !important;
@@ -180,8 +208,108 @@
           width: 12%;
         }
 
+        .row-mq-m {
+          border: ridge 1px transparent !important;
+          width: 200%;
+          margin-left: 0px !important;
+          margin-top: -30px !important;
+          display: block;
+          margin-bottom: 10px;
+        }
+
+        .col-6 {
+          /*border: ridge 1px blue !important;*/
+          margin-bottom: 10px;
+        }
+
+        .btn-success img {
+          width: 15%;
+        }
+
         h1 {
-          font-size: 40px;
+          font-size: 30px;
+        }
+
+        .row-puzzle-mq-m {
+          border: ridge 1px transparent !important;
+          margin-top: -50px;
+          display: block;
+        }
+
+        .col-6-puzzle-mq-m {
+          border: ridge 1px transparent !important;
+          width: 100%;
+        }
+
+        .draggable-image {
+          width: 70px !important;
+          border: ridge 1px gray !important;
+          border-radius: 5px;
+        }
+
+        .col-6-puzzle-der-mq-m {
+          border: ridge 1px transparent !important;
+          width: 100%;
+          margin-left: 100px;
+        }
+
+        .table-mq-m {
+          border: ridge 1px transparent !important;
+        }
+        .table-mq-m tr td div .drop-zone {
+          width: 70px;
+          height: 70px;
+        }
+
+        .table-tr-mq-m-1 {
+          border: ridge 1px transparent !important;
+        }
+
+        .table-tr-mq-m-2 {
+          border: ridge 1px transparent !important;
+        }
+
+        .table-tr-mq-m-3 {
+          border: ridge 1px transparent !important;
+        }
+
+        .table-tr-mq-m-4 {
+          border: ridge 1px transparent !important;
+        }
+
+        .td-mq-m {
+          border: ridge 1px gray !important;
+        }
+
+        .drop-zone {
+          border: ridge 1px transparent !important;
+        }
+
+        #next-section {
+          border: ridge 1px transparent !important;
+          margin-top: -75px;
+        }
+
+        .llave-inglesa {
+          width: 150px;
+        }
+
+        #check-button {
+          width: 90%;
+          /*border: ridge 1px red !important;*/
+        }
+
+        #reset-button {
+          width: 90%;
+          background-color: #e63946;
+          color: #fff;
+          border-color: #e63946;
+        }
+
+        #reset-button:hover {
+          width: 90%;
+          background-color: #c9303d;
+          transform: translateY(-2px);
         }
       }
 
@@ -468,9 +596,12 @@
               <div>
                 <img src="../../static/img/nina-cara.jpg" width="100px" class="mb-2">
               </div>
-              <audio controls>
-                <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
-              </audio>
+              <div class="audio-container">
+                <audio controls class="custom-audio">
+                  <source src="../../static/audio/voice-robot-cenditel.mp3" type="audio/mpeg">
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
             </div>
           </div>
         </div>
