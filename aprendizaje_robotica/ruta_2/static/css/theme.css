@@ -181,3 +181,10 @@ a:hover {
     margin-bottom: 10px;
   }
 }
+
+/* Dispositivos medianos (tabletas) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .mq-h1-text {
+    font-size: 25px !important;
+  }
+}
