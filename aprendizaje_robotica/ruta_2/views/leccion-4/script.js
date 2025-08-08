@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
             foodEaten = true;
             //sprite.textContent = '🎉';
             sprite.src = "../../static/img/Leccion-4/check.png";
-            output.innerHTML += '<div style="font-size: 14px; color: #FFFFFF;">¡Lo lograste 🎉! Cendibot encontró y tomó la batería 🔋 ¡Ahora está lleno de energía!</div>';
+            output.innerHTML += '<div style="font-size: 14px; color: #FFFFFF;">¡Lo lograste 🎉! Cendibot encontró y tomó la batería 🔋 ¡Ahora está lleno de energía! ⚡</div>';
             await sleep(1000);
         } else {
             output.innerHTML += '<div style="font-size: 14px; color: #FFFFFF;">La batería 🔋 está muy lejos. ¡Sigue intentando!</div>';
@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div>1. Se necesita un bloque "INICIAR" para comenzar.</div>
                 <div>2. Usa los bloques "MOVER" para acercar a Cendibot a la Batería 🔋.</div>
                 <div>3. El bloque "🖐🏾 TOMAR" solo funciona cuando Cendibot está cerca de la Batería🔋.</div>
-                <div>4. Cuando hayas colocaldo los bloques de tu programa pulsa "EJECUTAR" para que tu programa comience.</div>
+                <div>4. Cuando hayas colocado los bloques de tu programa pulsa "EJECUTAR" para que tu programa comience.</div>
                 <div>5. Pulsa "REINICIAR" para comenzar todo de nuevo.</div>
                 <div>6. ¡Observa los mensajes para ver tu progreso!.</div>
             <div>
