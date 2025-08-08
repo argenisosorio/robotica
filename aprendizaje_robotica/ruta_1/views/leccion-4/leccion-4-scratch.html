@@ -45,7 +45,7 @@
         "
     >
         <p
-            style="margin-left: 20px; margin-top: 15px; font-size: 25px;"
+            style="margin-left: 20px; margin-top: 15px; font-size: 20px;"
         >
             ⬅️ Volver
         </p>
@@ -54,12 +54,20 @@
     <div class="container">
         <header>
             <h1>Prueba tu lógica de Programación con Scratch</h1>
-            <p>¡Ayuda al Robot a llegar al tornillo! 🤖 → 🔩</p>
+            <p style="font-size: 20px;">
+                ¡Ayuda a Cendibot a llegar a la Batería
+                <img
+                    src="../../static/img/favicon.png"
+                    alt="Robot"
+                    width="25px"
+                > → 🔋
+            </p>
         </header>
 
         <div class="workspace">
             <!-- Bloques ahora están dentro del main-area para mobile -->
-            <div class="main-area">
+            <div class="main-area" style="border: ridge 1px transparent;">
+                <!-- Area de bloques -->
                 <div class="blocks-panel" id="blocks-panel">
                     <div class="blocks-content" id="blocks-content">
                         <h3>Bloques de Movimiento</h3>
@@ -87,14 +95,52 @@
                         </div>
                     </div>
                 </div>
+                <!-- Final de Area de bloques -->
 
+                <!-- Area del medio -->
                 <div class="stage-area" style="border: ridge 1px transparent;">
-                    <div class="stage" id="stage">
-                        <div class="sprite" id="sprite">🐱</div>
-                        <div class="food" id="food">🔩</div>
+                    <!-- Area de mensajes -->
+                    <div class="output" id="output">
+                        <div class="mission" style="font-size: 14px; color: #FFFFFF;">
+                            📝 <b>Misión:</b> ¡Cendibot tiene la batería baja
+                            🪫! Ayúdalo a llegar a la Batería 🔋 cargada usando
+                            los bloques de programación para que recupere toda
+                            su energía ⚡.
+                        </div>
                     </div>
+                    <!-- Final de Area de mensajes -->
+
+                    <!-- Escenario -->
+                    <div
+                        class="stage"
+                        id="stage"
+                        style="
+                            background: url(bg.png) center center repeat;
+                            background-size: cover;
+                        "
+                    >
+                        <img
+                            class="sprite"
+                            id="sprite"
+                            src="../../static/img/favicon.png"
+                            alt="Robot"
+                            width="40px"
+                        >
+                        <div
+                            class="food"
+                            id="food"
+                            style="
+                                border: ridge 1px #FAFAFA;
+                                border-radius: 200px;
+                                background-color: #FAFAFA;
+                            "
+                        >🔋</div>
+                    </div>
+                    <!-- Final de Escenario -->
+
+                    <!-- Area de Controles -->
                     <div class="controls">
-                        <div class="suggestions-button" id="suggestions-btn">💡 AYUDA</div>
+                        <div class="suggestions-button" id="suggestions-btn">💡 INSTRUCCIONES</div>
                         <div
                             class="reload-button"
                             onclick="window.location.reload();"
@@ -103,19 +149,66 @@
                         </div>
                         <div class="run-button" id="run-btn">✅ EJECUTAR</div>
                     </div>
+                    <!-- Final de Area de Controles -->
                 </div>
+                <!-- Final de Area del medio -->
 
+                <!-- Area de Programación -->
                 <div class="scripts-area" id="scripts-area">
                     <h3>Área de Programación</h3>
                     <p>Arrastra los bloques aquí para crear tu programa</p>
                 </div>
+                <!-- Final del Area de Programación -->
             </div>
         </div>
+    </div>
 
-        <div class="output" id="output">
-            <div class="mission">📝 <b>Misión:</b> Haz que el robot llegue al tornillo 🔩 usando los bloques de movimiento</div>
+    <!-- Footer -->
+    <div class="container-fluid" style="background: #fbbf00; padding: 5px;">
+        <div class="text-center img-zoom mb-3 mt-2">
+        <a href="http://www.cenditel.gob.ve/" target="_blank" style="text-decoration: none; color: #fff;">
+            <img class="logo-brand-mq" src="../../static/img/logo-cenditel.png" width="7%" class="mb-3">
+            <br>
+            <b id="typewriter" style="font-size: 15px; color: #fff"></b>
+        </a>
         </div>
     </div>
+    <!-- Final del Footer -->
+
+    <script>
+        const text = "Desarrollado por CENDITEL";
+        const typewriterElement = document.getElementById("typewriter");
+        let index = 0;
+        let deleting = false;
+
+        function typeEffect() {
+        // Mostrar o borrar caracteres
+        typewriterElement.textContent = text.substring(0, index);
+
+        if (!deleting) {
+            if (index < text.length) {
+            index++;
+            } else {
+            deleting = true;
+            setTimeout(typeEffect, 1000); // Pausa antes de borrar
+            return;
+            }
+        } else {
+            if (index > 0) {
+            index--;
+            } else {
+            deleting = false;
+            }
+        }
+
+        // Cambiar la velocidad dependiendo de si escribe o borra
+        const speed = deleting ? 50 : 100;
+        setTimeout(typeEffect, speed);
+        }
+
+        // Iniciar el efecto
+        typeEffect();
+    </script>
 
     <script>
     function unhover(element) {

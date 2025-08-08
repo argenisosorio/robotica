@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
         setPosition(sprite, initialPositions.sprite.x, initialPositions.sprite.y);
         setPosition(food, initialPositions.food.x, initialPositions.food.y);
         food.style.display = 'block';
-        sprite.textContent = '🤖';
+        // sprite.textContent = '🤖';
+        sprite.src = "../../static/img/favicon.png";
     }
 
     // Establecer posición en porcentajes
@@ -224,18 +225,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Ejecutar los scripts
     async function executeScripts() {
+        console.log('executeScripts');
+        sprite.src = "../../static/img/favicon.png";
         if (isExecuting) return;
         
         isExecuting = true;
         runBtn.disabled = true;
         resetPositions();
         foodEaten = false;
-        output.innerHTML = '<div class="mission">✅ Ejecutando programa...</div>';
+        output.innerHTML = '<div class="mission" style="font-size: 14px; color: #FFFFFF;">✅ Ejecutando programa...</div>';
         
         const startBlocks = document.querySelectorAll('.script-block-start');
         
         if (startBlocks.length === 0) {
-            output.innerHTML = '<div>⚠️ ¡Necesitas el bloque "INICIAR" para comenzar!</div>';
+            output.innerHTML = '<div style="font-size: 14px; color: #FFFFFF;">⚠️ ¡Necesitas el bloque "INICIAR" para comenzar!</div>';
             isExecuting = false;
             runBtn.disabled = false;
             return;
@@ -248,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (!foodEaten) {
-            output.innerHTML += '<div>❌ Programa terminado. ¡El Robot 🤖 no alcanzó el Tornillo 🔩!</div>';
+            output.innerHTML += '<div style="font-size: 14px; color: #FFFFFF;">❌ Programa terminado. ¡Cendibot no alcanzó la Batería 🔋!</div>';
         }
 
         isExecuting = false;
@@ -334,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function() {
         );
 
         if (distance < 60) {
-            output.innerHTML += '<div>¡El Robot está cerca del tornillo! 🔩</div>';
+            output.innerHTML += '<div style="font-size: 14px; color: #FFFFFF;">¡Cendibot está cerca de la Batería! 🔋</div>';
         }
     }
 
@@ -351,22 +354,27 @@ document.addEventListener('DOMContentLoaded', function() {
         if (distance < 50) {
             food.style.display = 'none';
             foodEaten = true;
-            sprite.textContent = '🎉';
-            output.innerHTML += '<div>¡Lo lograste 🎉! El Robot 🤖 encontró y tomo el Tornillo 🔩</div>';
+            //sprite.textContent = '🎉';
+            sprite.src = "../../static/img/Leccion-4/check.png";
+            output.innerHTML += '<div style="font-size: 14px; color: #FFFFFF;">¡Lo lograste 🎉! Cendibot encontró y tomó la batería 🔋 ¡Ahora está lleno de energía!</div>';
             await sleep(1000);
         } else {
-            output.innerHTML += '<div>El Tornillo 🔩 está muy lejos. ¡Sigue intentando!</div>';
+            output.innerHTML += '<div style="font-size: 14px; color: #FFFFFF;">La batería 🔋 está muy lejos. ¡Sigue intentando!</div>';
         }
     }
 
     // Mostrar sugerencias
     function showSuggestions() {
         output.innerHTML = `
-            <div><strong>💡 AYUDA:</strong></div>
-            <div>1. Se necesitas un bloque "INICIAR" para comenzar</div>
-            <div>2. Usa bloques "MOVER" para acercar al Robot 🤖 al Tornillo 🔩</div>
-            <div>3. El bloque "🖐🏾 TOMAR" solo funciona cuando el Robot 🤖 está cerca del Tornillo 🔩</div>
-            <div>4. ¡Observa los mensajes para ver tu progreso!</div>
+            <div style="font-size: 14px; color: #FFFFFF;">
+                <div><strong>💡 INSTRUCCIONES:</strong></div>
+                <div>1. Se necesita un bloque "INICIAR" para comenzar.</div>
+                <div>2. Usa los bloques "MOVER" para acercar a Cendibot a la Batería 🔋.</div>
+                <div>3. El bloque "🖐🏾 TOMAR" solo funciona cuando Cendibot está cerca de la Batería🔋.</div>
+                <div>4. Cuando hayas colocaldo los bloques de tu programa pulsa "EJECUTAR" para que tu programa comience.</div>
+                <div>5. Pulsa "REINICIAR" para comenzar todo de nuevo.</div>
+                <div>6. ¡Observa los mensajes para ver tu progreso!.</div>
+            <div>
         `;
     }
     

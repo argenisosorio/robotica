@@ -76,7 +76,7 @@ header p {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     overflow: hidden;
-    order: 1; /* Mueve los bloques arriba en mobile */
+    order: 2; /* Mueve los bloques arriba en mobile */
     border: ridge 1px gray;
 }
 
@@ -124,7 +124,7 @@ header p {
 
 .stage-area {
     width: 600px;
-    order: 2;
+    order: 1;
 }
 
 .stage {
@@ -203,13 +203,13 @@ header p {
 }
 
 .suggestions-button {
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: #d26da1;
+    color: #FFFFFF;
 }
 
 .suggestions-button:hover {
-    background-color: gray;
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #d26da1;
 }
 
 .scripts-area {
@@ -238,12 +238,13 @@ header p {
 
 .output {
     order: 4;
-    background-color: lightgray;
+    background-color: #d26da1;
     padding: 10px;
     border-radius: 8px;
     min-height: 40px;
-    font-size: 0.9rem;
-    margin-top: 15px;
+    font-size: 8px;
+    /*margin-top: 15px;*/
+    margin-bottom: 15px;
     border: ridge 1px gray;
 }
 
@@ -427,6 +428,7 @@ header p {
 /* Estilos específicos para móviles */
 @media (max-width: 599px) {
     .blocks-content {
+        border: ridge 1px transparent;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -449,7 +451,7 @@ header p {
     .controls {
         flex-direction: row;
     }
-    
+
     /* Mejorar experiencia de arrastre en móviles */
     .block {
         -webkit-user-select: none;
@@ -476,4 +478,20 @@ header p {
 
 h3 {
     font-size: 14px !important;
+}
+
+/* Dispositivos grandes (escritorio) */
+@media (min-width: 769px) {
+    .logo-brand-mq {
+        width: 60px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Dispositivos pequeños (teléfonos) */
+@media (max-width: 576px) {
+    .logo-brand-mq {
+        width: 80px;
+        margin-bottom: 10px;
+    }
 }
