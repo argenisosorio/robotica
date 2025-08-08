@@ -499,4 +499,12 @@ h3 {
         width: 80px;
         margin-bottom: 10px;
     }
+
+    .stage-area {
+        width: 100%;
+    }
+
+    .btn-control {
+        font-size: 12px !important;
+    }
 }

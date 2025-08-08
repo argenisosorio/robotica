@@ -427,6 +427,11 @@ header p {
 
 /* Estilos específicos para móviles */
 @media (max-width: 599px) {
+    .custom-audio {
+        max-width: 100%; /* Ocupa todo el ancho en móviles */
+        border-radius: 5px;
+    }
+
     .blocks-content {
         border: ridge 1px transparent;
         display: flex;
@@ -493,5 +498,13 @@ h3 {
     .logo-brand-mq {
         width: 80px;
         margin-bottom: 10px;
+    }
+
+    .stage-area {
+        width: 100%;
+    }
+
+    .btn-control {
+        font-size: 12px !important;
     }
 }
