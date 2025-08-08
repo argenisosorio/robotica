@@ -427,6 +427,11 @@ header p {
 
 /* Estilos específicos para móviles */
 @media (max-width: 599px) {
+    .custom-audio {
+        max-width: 100%; /* Ocupa todo el ancho en móviles */
+        border-radius: 5px;
+    }
+
     .blocks-content {
         border: ridge 1px transparent;
         display: flex;
