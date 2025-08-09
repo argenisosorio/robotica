@@ -434,6 +434,7 @@ header p {
 
     .blocks-content {
         border: ridge 1px transparent;
+        max-height: 600px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
