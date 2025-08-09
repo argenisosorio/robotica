@@ -99,7 +99,6 @@
         }
 
         .col-6 {
-          /*border: ridge 1px blue !important;*/
           margin-bottom: 10px;
         }
 
@@ -177,7 +176,6 @@
 
         #check-button {
           width: 100%;
-          /*border: ridge 1px red !important;*/
         }
 
         #reset-button {
@@ -310,6 +308,22 @@
           width: 90%;
           background-color: #c9303d;
           transform: translateY(-2px);
+        }
+      }
+
+      /* Tablet 800x1280 - Orientación vertical */
+      @media (min-width: 800px) and (max-width: 1280px) and (orientation: portrait) {
+        .botones {
+          border: ridge 1px transparent !important;
+        }
+
+        #check-button {
+          border: ridge 1px transparent !important;
+          margin-left: -70px;
+        }
+
+        #reset-button {
+          border: ridge 1px transparent !important;
         }
       }
 
@@ -826,8 +840,8 @@
           >
         </p>
 
-
-        <div class="row" style="border: ridge 1px transparent; margin-top: -20px;">
+        <!-- Botones -->
+        <div class="row botones" style="border: ridge 1px transparent; margin-top: -20px;">
           <div class="col-3"></div>
           <div class="col-3" style="border: ridge 1px transparent;">
             <button
@@ -850,7 +864,10 @@
           </div>
           <div class="col-3"></div>
         </div>
+        <!-- Final de Botones -->
+
         <br>
+
         <!-- Siguiente módulo -->
         <div id="next-section" style="display: none;">
           <br>
