@@ -278,6 +278,10 @@
         border-color: #2a9d8f;
       }
 
+      #flecha_derecha {
+        display: none;
+      }
+
       .drop-zone {
         width: 100px; /* Adjust drop zone width to match your images */
         height: 100px; /* Adjust drop zone height for puzzle pieces */
@@ -702,6 +706,7 @@
           >
         </p>
 
+        <!-- Botones del formulario -->
         <div class="row" style="border: ridge 1px transparent; margin-top: -20px;">
           <div class="col-3"></div>
           <div class="col-3" style="border: ridge 1px transparent;">
@@ -726,7 +731,30 @@
           </div>
           <div class="col-3"></div>
         </div>
+        <!-- Final de Botones del formulario -->
         <br>
+        <br>
+        <!-- Botones de cambio de lección -->
+        <div class="text-center" style="border: ridge 1px transparent;">
+          <a href="leccion-4-elementos-robot-maquina.html">
+            <img
+              src="../../static/img/flechas/izq-amarillo.png"
+              width="40px"
+              class="mb-3 llave-inglesa img-rotate-180"
+              style="margin-right: 25px;"
+            >
+          </a>
+          <a href="leccion-4-scratch.html">
+            <img
+              id="flecha_derecha"
+              src="../../static/img/flechas/der-amarillo.png"
+              width="40px"
+              class="mb-3 llave-inglesa img-rotate-180"
+              style="margin-left: 25px;"
+            >
+          </a>
+        </div>
+        <!-- Final de botones de cambio de lección -->
       </div>
     </div>
     <!-- End Right Column -->
@@ -935,6 +963,7 @@
             if (allCorrect) {
               messageDisplay.textContent = '¡Felicidades! ¡Has asociado las imágenes correctamente!';
               messageDisplay.style.color = '#28a745';
+              document.getElementById('flecha_derecha').style.display = 'inline';
             } else {
               messageDisplay.textContent = '¡Sigue intentándolo! Algunas piezas no están en su lugar.';
               messageDisplay.style.color = '#dc3545';
