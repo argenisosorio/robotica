@@ -357,6 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
             //sprite.textContent = '🎉';
             sprite.src = "../../static/img/Leccion-4/check.png";
             output.innerHTML += '<div style="font-size: 14px; color: #FFFFFF;">¡Lo lograste 🎉! Cendibot encontró y tomó la batería 🔋 ¡Ahora está lleno de energía! ⚡</div>';
+            document.getElementById('flecha_derecha').style.display = 'inline';
             await sleep(1000);
         } else {
             output.innerHTML += '<div style="font-size: 14px; color: #FFFFFF;">La batería 🔋 está muy lejos. ¡Sigue intentando!</div>';

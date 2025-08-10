@@ -2,6 +2,16 @@ body {
   cursor: url("../img/cursor.png"), auto;
 }
 
+b#typewriter {
+  min-height: 24px;
+  display: block;
+}
+
+.logo-brand-mq {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
 .leccion-1 {
   background: url(../img/Leccion-1/leccion-1-background.png) no-repeat center center;
   background-size: cover;

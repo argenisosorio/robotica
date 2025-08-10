@@ -20,6 +20,29 @@ body {
     cursor: url("../../static/img/cursor.png"), auto;
 }
 
+b#typewriter {
+    min-height: 24px;
+    display: block;
+}
+
+.llave-inglesa {
+    cursor: url("../../static/img/cursor-llave-inglesa.png"), auto;
+}
+
+.img-rotate-180:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg); /* Opcional para navegadores antiguos */
+    -moz-transform: rotate(360deg); /* Opcional para navegadores antiguos */
+    -o-transform: rotate(360deg); /* Opcional para navegadores antiguos */
+    -ms-transform: rotate(360deg); /* Opcional para navegadores antiguos */
+    transition: transform 1s ease;
+    filter: contrast(120%);
+}
+
+#flecha_derecha {
+    display: none;
+}
+
 .list-group-item {
     background-color: #fff !important;
     border-color: #fff !important;
